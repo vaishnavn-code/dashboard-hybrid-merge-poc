@@ -1,39 +1,24 @@
-import { useState, Suspense } from "react";
+import { useState } from "react";
 import Sidebar from "./components/layout/Sidebar";
 import Header from "./components/layout/Header";
 import Overview from "./pages/Overview";
-// import Portfolio from "./pages/Portfolio";
-import Audit from "./pages/Audit";
-// import Rates from "./pages/Rates";
-// import CombinedView from "./pages/CombinedView";
-// import CostAnalysis from "./pages/CostAnalysis";
-// import Maturity from "./pages/Maturity";
-// import CounterParty from "./pages/CounterParty";
-// import Transactions from "./pages/Transactions";
-import Roles from "./pages/Roles";
-import TCode from "./pages/TCode";
+import Portfolio from "./pages/Portfolio";
+import Rates from "./pages/Rates";
+import CostAnalysis from "./pages/CostAnalysis";
+import Maturity from "./pages/Maturity";
+import CounterParty from "./pages/CounterParty";
+import Transactions from "./pages/Transactions";
 import { Spinner, ErrorMsg } from "./components/ui/helpers";
 import { useDashboardData } from "./hooks/useDashboardData";
-import Analytics from "./pages/Analytics";
-import Users from "./pages/Users";
-import BorrowingsDashboard from "./dashboards/borrowings";
-// import mockData from "./data/mockOverview.json";
-import React from "react";
-
-const DASHBOARD_SUBTITLE = "COF Dashboard · v14 · All Amounts in INR Crores";
 
 const PAGE_TITLES = {
   overview: "Overview",
   portfolioMix: "Portfolio Mix",
-  users: "Users",
   costAnalysis: "Cost Analysis",
   rateTrends: "Rate Trends",
   maturityAnalysis: "Maturity Analysis",
   counterparties: "Counterparties",
   transactions: "Transactions",
-  tcode: "T-Codes",
-  audit: "Audit Log",
-  combinedView: "Combined View",
 };
 
 export default function App() {
@@ -56,29 +41,11 @@ export default function App() {
       case "overview":
         return <Overview data={data} />;
 
-      // case "portfolioMix":
-      //   return <Portfolio data={data} />;
+      case "portfolioMix":
+        return <Portfolio data={data} />;
 
       case "costAnalysis":
         return <CostAnalysis data={data} />;
-
-      case "analytics":
-        return <Analytics data={data} />;
-
-      case "users":
-        return <Users data={data} />;
-
-      case "roles":
-        return <Roles data={data} />;
-
-      case "tcode":
-        return <TCode data={data} />;
-
-      case "audit":
-        return <Audit data={data} />;
-
-        case "combinedView":
-  return <CombinedView data={data} />;
 
       case "rateTrends":
         return <Rates data={data} />;
@@ -106,10 +73,6 @@ export default function App() {
         style={{
           position: "fixed",
           inset: 0,
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
           background: "rgba(255, 255, 255, 0.9)",
           backdropFilter: "blur(6px)",
           display: "flex",
@@ -136,23 +99,34 @@ export default function App() {
           <div style={{ fontSize: "15px", color: "#1565c0", marginBottom: 20 }}>
             {status}
           </div>
-          <svg
-            viewBox="0 0 24 24"
-            width={28}
-            height={28}
-            fill="none"
-            stroke="#1565c0"
-            strokeWidth={3}
-            strokeLinecap="round"
-            style={{ animation: "spin 1s linear infinite" }}
-          >
-            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-          </svg>
         </div>
       </div>
     );
   };
+
   return (
-    <BorrowingsDashboard />
+    <div className="wrapper">
+      <Sidebar activePage={page} onNavigate={setPage} />
+
+      <div className="main-area">
+        <Header
+          title={PAGE_TITLES[page]}
+          darkMode={darkMode}
+          onToggleDark={toggleDark}
+          activePage={page}
+          setActivePage={setPage}
+          setIsExportingFull={setIsExportingFull}
+          setExportStatus={setExportStatus}
+        />
+
+        <div className="page-content">
+          {loading && <Spinner />}
+          {error && <ErrorMsg message={error} />}
+          {!loading && !error && renderPage()}
+        </div>
+      </div>
+
+      <ExportOverlay status={exportStatus} />
+    </div>
   );
 }
