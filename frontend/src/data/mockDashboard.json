@@ -1,0 +1,3488 @@
+{
+  "overview": {
+    "kpi": {
+      "Total_Users": {
+        "Title": "69",
+        "Subtitle": "59 active · 10 inactive",
+        "Footer": "67 Dialog · 1 System · 1 Service"
+      },
+      "Role_Assignment": {
+        "Title": "437",
+        "Subtitle": "Across 58 users · 39 role IDs",
+        "Footer": "39 unique roles assigned"
+      },
+      "Unique_Tcodes": {
+        "Title": "331",
+        "Subtitle": "Across 399 role-tcode mappings",
+        "Footer": "Top scope: TRM Display"
+      },
+      "Audit_Events": {
+        "Title": "200",
+        "Subtitle": "12-day period · 12 dates",
+        "Footer": "PUNITH.J · 86 events (43%)"
+      }
+    },
+    "charts": {
+      "Daily Audit Activity": {
+        "values": [
+          {
+            "date": "2026-03-20",
+            "audit_events": 12,
+            "unique_tcodes": 10,
+            "unique_users": 6
+          },
+          {
+            "date": "2026-03-21",
+            "audit_events": 18,
+            "unique_tcodes": 14,
+            "unique_users": 8
+          },
+          {
+            "date": "2026-03-22",
+            "audit_events": 10,
+            "unique_tcodes": 8,
+            "unique_users": 5
+          },
+          {
+            "date": "2026-03-23",
+            "audit_events": 24,
+            "unique_tcodes": 20,
+            "unique_users": 11
+          },
+          {
+            "date": "2026-03-24",
+            "audit_events": 16,
+            "unique_tcodes": 13,
+            "unique_users": 7
+          },
+          {
+            "date": "2026-03-25",
+            "audit_events": 22,
+            "unique_tcodes": 18,
+            "unique_users": 9
+          },
+          {
+            "date": "2026-03-26",
+            "audit_events": 20,
+            "unique_tcodes": 16,
+            "unique_users": 8
+          },
+          {
+            "date": "2026-03-27",
+            "audit_events": 14,
+            "unique_tcodes": 11,
+            "unique_users": 6
+          },
+          {
+            "date": "2026-03-28",
+            "audit_events": 8,
+            "unique_tcodes": 6,
+            "unique_users": 4
+          },
+          {
+            "date": "2026-03-29",
+            "audit_events": 15,
+            "unique_tcodes": 12,
+            "unique_users": 7
+          },
+          {
+            "date": "2026-03-30",
+            "audit_events": 27,
+            "unique_tcodes": 21,
+            "unique_users": 10
+          },
+          {
+            "date": "2026-03-31",
+            "audit_events": 14,
+            "unique_tcodes": 10,
+            "unique_users": 5
+          }
+        ]
+      },
+      "Activity by Business Group": {
+        "values": [
+          {
+            "name": "CREDIT-RISK",
+            "value": 40
+          },
+          {
+            "name": "BUSINESS",
+            "value": 33
+          },
+          {
+            "name": "FINANCE",
+            "value": 27
+          }
+        ]
+      },
+      "Top Users by Audit Activity": {
+        "values": [
+          {
+            "name": "PUNITH.J",
+            "value": 86
+          },
+          {
+            "name": "JAYASHANKARV",
+            "value": 34
+          },
+          {
+            "name": "KARTHIK.BP",
+            "value": 32
+          },
+          {
+            "name": "SAP_BASIS",
+            "value": 23
+          },
+          {
+            "name": "ANUSA",
+            "value": 8
+          }
+        ]
+      },
+      "User Account Status": {
+        "values": [
+          {
+            "name": "Active",
+            "value": 59
+          },
+          {
+            "name": "Inactive",
+            "value": 10
+          }
+        ]
+      },
+      "Most Executed T-Codes": {
+        "values": [
+          {
+            "name": "/FSPL/FIR070",
+            "value": 120
+          },
+          {
+            "name": "/FSPL/FIR074",
+            "value": 42
+          },
+          {
+            "name": "/FSPL/FIR026",
+            "value": 25
+          },
+          {
+            "name": "ZFSINR029",
+            "value": 18
+          },
+          {
+            "name": "ZFSINR008",
+            "value": 7
+          }
+        ]
+      }
+    }
+  },
+  "analytics": {
+    "kpi": {
+      "Role_Assignment": {
+        "Title": "438",
+        "Subtitle": "Across 58 users",
+        "Footer": ""
+      },
+      "Unique_Roles": {
+        "Title": "39",
+        "Subtitle": "Distinct role identifiers",
+        "Footer": ""
+      },
+      "Tcode_Records": {
+        "Title": "399",
+        "Subtitle": "Role-to-tcode mappings",
+        "Footer": ""
+      },
+      "Max_roles": {
+        "Title": "14",
+        "Subtitle": "",
+        "Footer": "DATAMIG_FI1 · Avg 7.6"
+      }
+    },
+    "charts": {
+      "Top Role Assignments by Role ID": {
+        "FI_AP_DISPLAY": {
+          "user_count": "42",
+          "Tcode_count": "108"
+        },
+        "FI_AR_DISPLAY": {
+          "user_count": "42",
+          "Tcode_count": "98"
+        },
+        "FI_GL_DISPLAY": {
+          "user_count": "42",
+          "Tcode_count": "70"
+        },
+        "FI_AM_DISPLAY": {
+          "user_count": "41",
+          "Tcode_count": ""
+        },
+        "TRM_DISPLAY": {
+          "user_count": "29",
+          "Tcode_count": "54"
+        },
+        "FI_AP_MAKER": {
+          "user_count": "19",
+          "Tcode_count": "32"
+        },
+        "FI_AP_MASTER": {
+          "user_count": "19",
+          "Tcode_count": ""
+        },
+        "FI_AP_PAYMENT": {
+          "user_count": "19",
+          "Tcode_count": "20"
+        },
+        "FI_AR_MAKER": {
+          "user_count": "19",
+          "Tcode_count": ""
+        },
+        "FI_AR_MASTER": {
+          "user_count": "19",
+          "Tcode_count": ""
+        },
+        "FI_GL_MAKER": {
+          "user_count": "19",
+          "Tcode_count": ""
+        },
+        "FI_GL_MASTER": {
+          "user_count": "19",
+          "Tcode_count": "45"
+        }
+      },
+      "Users by Role Count": {
+        "DATAMIG_FI": "14",
+        "ANKITHAS": "13",
+        "ANUSA": "13",
+        "ARUNAG": "13",
+        "ASHAR": "13",
+        "ASISHS": "13",
+        "BHARATHK": "13",
+        "CHAITHA": "13",
+        "JAGADISHL": "13",
+        "JAYASHANKARV": "13"
+      },
+      "Role Category Distribution": {
+        "FI Roles": "366",
+        "TRM Roles": "50",
+        "Other": "21"
+      }
+    }
+  },
+  "users": {
+    "kpi": {
+      "Active_Users": {
+        "Title": "59",
+        "Subtitle": "59 active · 10 inactive",
+        "Footer": "67 Dialog · 1 System · 1 Service"
+      },
+      "Inactive_Users": {
+        "Title": "10",
+        "Subtitle": "Currently enabled accounts",
+        "Footer": "86% of total users"
+      },
+      "Dialog_Users": {
+        "Title": "10",
+        "Subtitle": "Locked / expired accounts",
+        "Footer": "14% — review for deprovisioning"
+      },
+      "System_Service": {
+        "Title": "14",
+        "Subtitle": "Held by DATAMIG_FI1",
+        "Footer": "User: DATAMIG_FI1"
+      }
+    },
+    "table": [
+      {
+        "uid": "AMOGHAK",
+        "name": "Amogha K",
+        "status": "Active",
+        "type": "A Dialog",
+        "valid_from": "01.10.2025",
+        "valid_to": "31.12.9999",
+        "role_count": "5"
+      },
+      {
+        "uid": "ANANTHAP",
+        "name": "Anantha Padmanabhan B",
+        "status": "Active",
+        "type": "A Dialog",
+        "valid_from": "01.10.2025",
+        "valid_to": "31.12.9999",
+        "role_count": "8"
+      },
+      {
+        "uid": "ANKITAS",
+        "name": "Ankita Singh",
+        "status": "Active",
+        "type": "A Dialog",
+        "valid_from": "18.11.2025",
+        "valid_to": "31.12.9999",
+        "role_count": "2"
+      },
+      {
+        "uid": "ANKITHAS",
+        "name": "Ankitha Suresh",
+        "status": "Active",
+        "type": "A Dialog",
+        "valid_from": "01.10.2025",
+        "valid_to": "31.12.9999",
+        "role_count": "13"
+      },
+      {
+        "uid": "ANSHUG",
+        "name": "Anshu Garg",
+        "status": "Active",
+        "type": "A Dialog",
+        "valid_from": "27.10.2025",
+        "valid_to": "31.12.9999",
+        "role_count": "2"
+      }
+    ]
+  },
+  "roles": {
+    "charts": {
+      "Roles by Assignment": {
+        "FI_AP_DISPLAY": "42",
+        "FI_AR_DISPLAY": "42",
+        "FI_GL_DISPLAY": "42",
+        "FI_AM_DISPLAY": "41",
+        "TRM_DISPLAY": "29",
+        "FI_AP_MAKER": "19",
+        "FI_AP_MASTER": "19",
+        "FI_AP_PAYMENT": "19",
+        "FI_AR_MAKER": "19",
+        "FI_AR_MASTER": "19",
+        "FI_GL_MAKER": "19",
+        "FI_GL_MASTER": "19"
+      },
+      "Role Distribution": {
+        "trm": "50",
+        "other": "21",
+        "am": "84",
+        "ap": "106",
+        "ar": "87",
+        "gl": "90"
+      }
+    },
+    "table": [
+      {
+        "uid": "ABHYUDITS",
+        "name": "Abhyudit Sarkar",
+        "role_id": "ZTFSIN_FI_AP_DISPLAY",
+        "role_desc": "Role for FI AP Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ABHYUDITS",
+        "name": "Abhyudit Sarkar",
+        "role_id": "ZTFSIN_FI_AP_MAKER",
+        "role_desc": "Role for FI AP Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ABHYUDITS",
+        "name": "Abhyudit Sarkar",
+        "role_id": "ZTFSIN_FI_AP_MASTER",
+        "role_desc": "Role for FI AP Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ABHYUDITS",
+        "name": "Abhyudit Sarkar",
+        "role_id": "ZTFSIN_FI_AP_PAYMENT",
+        "role_desc": "Role for FI AP Payment",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ABHYUDITS",
+        "name": "Abhyudit Sarkar",
+        "role_id": "ZTFSIN_FI_AR_DISPLAY",
+        "role_desc": "FI Role for AR Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ABHYUDITS",
+        "name": "Abhyudit Sarkar",
+        "role_id": "ZTFSIN_FI_AR_MAKER",
+        "role_desc": "FI Role for AR Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ABHYUDITS",
+        "name": "Abhyudit Sarkar",
+        "role_id": "ZTFSIN_FI_AR_MASTER",
+        "role_desc": "FI Role for AR Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ABHYUDITS",
+        "name": "Abhyudit Sarkar",
+        "role_id": "ZTFSIN_FI_GL_DISPLAY",
+        "role_desc": "FI Role for GL Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ABHYUDITS",
+        "name": "Abhyudit Sarkar",
+        "role_id": "ZTFSIN_FI_GL_MAKER",
+        "role_desc": "FI Role for GL Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ABHYUDITS",
+        "name": "Abhyudit Sarkar",
+        "role_id": "ZTFSIN_FI_GL_MASTER",
+        "role_desc": "FI Role for GL Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AKSHAYK",
+        "name": "Akshay Kumar",
+        "role_id": "ZTFSIN_FI_AM_DISPLAY",
+        "role_desc": "FI Role for AM Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AKSHAYK",
+        "name": "Akshay Kumar",
+        "role_id": "ZTFSIN_FI_AP_DISPLAY",
+        "role_desc": "Role for FI AP Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AKSHAYK",
+        "name": "Akshay Kumar",
+        "role_id": "ZTFSIN_FI_AR_DISPLAY",
+        "role_desc": "FI Role for AR Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AKSHAYK",
+        "name": "Akshay Kumar",
+        "role_id": "ZTFSIN_FI_GL_DISPLAY",
+        "role_desc": "FI Role for GL Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AKSHAYK",
+        "name": "Akshay Kumar",
+        "role_id": "ZTFSIN_TRM_DISPLAY",
+        "role_desc": "Role for TRM Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AMITS",
+        "name": "Amit Singhal",
+        "role_id": "ZTFSIN_FI_AM_CHECKER",
+        "role_desc": "FI Role for AM Checker",
+        "start_date": "21.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AMITS",
+        "name": "Amit Singhal",
+        "role_id": "ZTFSIN_FI_AM_DISPLAY",
+        "role_desc": "FI Role for AM Display",
+        "start_date": "21.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AMITS",
+        "name": "Amit Singhal",
+        "role_id": "ZTFSIN_FI_AP_CHECKER",
+        "role_desc": "Role for FI AP Checker",
+        "start_date": "21.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AMITS",
+        "name": "Amit Singhal",
+        "role_id": "ZTFSIN_FI_AP_DISPLAY",
+        "role_desc": "Role for FI AP Display",
+        "start_date": "21.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AMITS",
+        "name": "Amit Singhal",
+        "role_id": "ZTFSIN_FI_AR_CHECKER",
+        "role_desc": "FI Role for AR Checker",
+        "start_date": "21.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AMITS",
+        "name": "Amit Singhal",
+        "role_id": "ZTFSIN_FI_AR_DISPLAY",
+        "role_desc": "FI Role for AR Display",
+        "start_date": "21.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AMITS",
+        "name": "Amit Singhal",
+        "role_id": "ZTFSIN_FI_GL_CHECKER",
+        "role_desc": "FI Role for GL Checker",
+        "start_date": "21.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AMITS",
+        "name": "Amit Singhal",
+        "role_id": "ZTFSIN_FI_GL_DISPLAY",
+        "role_desc": "FI Role for GL Display",
+        "start_date": "21.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AMOGHAK",
+        "name": "Amogha K",
+        "role_id": "ZTFSIN_FI_AM_DISPLAY",
+        "role_desc": "FI Role for AM Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AMOGHAK",
+        "name": "Amogha K",
+        "role_id": "ZTFSIN_FI_AP_DISPLAY",
+        "role_desc": "Role for FI AP Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AMOGHAK",
+        "name": "Amogha K",
+        "role_id": "ZTFSIN_FI_AR_DISPLAY",
+        "role_desc": "FI Role for AR Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AMOGHAK",
+        "name": "Amogha K",
+        "role_id": "ZTFSIN_FI_GL_DISPLAY",
+        "role_desc": "FI Role for GL Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AMOGHAK",
+        "name": "Amogha K",
+        "role_id": "ZTFSIN_TRM_DISPLAY",
+        "role_desc": "Role for TRM Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANANTHAP",
+        "name": "Anantha Padmanabhan B",
+        "role_id": "ZTFSIN_FI_AM_CHECKER",
+        "role_desc": "FI Role for AM Checker",
+        "start_date": "01.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANANTHAP",
+        "name": "Anantha Padmanabhan B",
+        "role_id": "ZTFSIN_FI_AM_DISPLAY",
+        "role_desc": "FI Role for AM Display",
+        "start_date": "01.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANANTHAP",
+        "name": "Anantha Padmanabhan B",
+        "role_id": "ZTFSIN_FI_AP_CHECKER",
+        "role_desc": "Role for FI AP Checker",
+        "start_date": "01.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANANTHAP",
+        "name": "Anantha Padmanabhan B",
+        "role_id": "ZTFSIN_FI_AP_DISPLAY",
+        "role_desc": "Role for FI AP Display",
+        "start_date": "01.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANANTHAP",
+        "name": "Anantha Padmanabhan B",
+        "role_id": "ZTFSIN_FI_AR_CHECKER",
+        "role_desc": "FI Role for AR Checker",
+        "start_date": "01.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANANTHAP",
+        "name": "Anantha Padmanabhan B",
+        "role_id": "ZTFSIN_FI_AR_DISPLAY",
+        "role_desc": "FI Role for AR Display",
+        "start_date": "01.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANANTHAP",
+        "name": "Anantha Padmanabhan B",
+        "role_id": "ZTFSIN_FI_GL_CHECKER",
+        "role_desc": "FI Role for GL Checker",
+        "start_date": "01.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANANTHAP",
+        "name": "Anantha Padmanabhan B",
+        "role_id": "ZTFSIN_FI_GL_DISPLAY",
+        "role_desc": "FI Role for GL Display",
+        "start_date": "01.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANKITAS",
+        "name": "Ankita Singh",
+        "role_id": "ZTFSIN_TRM_CHECKER",
+        "role_desc": "Role for TRM Checker",
+        "start_date": "18.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANKITAS",
+        "name": "Ankita Singh",
+        "role_id": "ZTFSIN_TRM_DISPLAY",
+        "role_desc": "Role for TRM Display",
+        "start_date": "18.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANKITHAS",
+        "name": "Ankitha Suresh",
+        "role_id": "ZTFSIN_FI_AM_DISPLAY",
+        "role_desc": "FI Role for AM Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANKITHAS",
+        "name": "Ankitha Suresh",
+        "role_id": "ZTFSIN_FI_AM_MAKER",
+        "role_desc": "FI Role for AM Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANKITHAS",
+        "name": "Ankitha Suresh",
+        "role_id": "ZTFSIN_FI_AM_MASTER",
+        "role_desc": "FI Role for AM Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANKITHAS",
+        "name": "Ankitha Suresh",
+        "role_id": "ZTFSIN_FI_AP_DISPLAY",
+        "role_desc": "Role for FI AP Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANKITHAS",
+        "name": "Ankitha Suresh",
+        "role_id": "ZTFSIN_FI_AP_MAKER",
+        "role_desc": "Role for FI AP Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANKITHAS",
+        "name": "Ankitha Suresh",
+        "role_id": "ZTFSIN_FI_AP_MASTER",
+        "role_desc": "Role for FI AP Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANKITHAS",
+        "name": "Ankitha Suresh",
+        "role_id": "ZTFSIN_FI_AP_PAYMENT",
+        "role_desc": "Role for FI AP Payment",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANKITHAS",
+        "name": "Ankitha Suresh",
+        "role_id": "ZTFSIN_FI_AR_DISPLAY",
+        "role_desc": "FI Role for AR Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANKITHAS",
+        "name": "Ankitha Suresh",
+        "role_id": "ZTFSIN_FI_AR_MAKER",
+        "role_desc": "FI Role for AR Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANKITHAS",
+        "name": "Ankitha Suresh",
+        "role_id": "ZTFSIN_FI_AR_MASTER",
+        "role_desc": "FI Role for AR Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANKITHAS",
+        "name": "Ankitha Suresh",
+        "role_id": "ZTFSIN_FI_GL_DISPLAY",
+        "role_desc": "FI Role for GL Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANKITHAS",
+        "name": "Ankitha Suresh",
+        "role_id": "ZTFSIN_FI_GL_MAKER",
+        "role_desc": "FI Role for GL Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANKITHAS",
+        "name": "Ankitha Suresh",
+        "role_id": "ZTFSIN_FI_GL_MASTER",
+        "role_desc": "FI Role for GL Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANSHUG",
+        "name": "Anshu Garg",
+        "role_id": "ZTFSIN_TRM_CHECKER",
+        "role_desc": "Role for TRM Checker",
+        "start_date": "27.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANSHUG",
+        "name": "Anshu Garg",
+        "role_id": "ZTFSIN_TRM_DISPLAY",
+        "role_desc": "Role for TRM Display",
+        "start_date": "27.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANUSA",
+        "name": "Anu Swarna A",
+        "role_id": "ZTFSIN_FI_AM_DISPLAY",
+        "role_desc": "FI Role for AM Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANUSA",
+        "name": "Anu Swarna A",
+        "role_id": "ZTFSIN_FI_AM_MAKER",
+        "role_desc": "FI Role for AM Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANUSA",
+        "name": "Anu Swarna A",
+        "role_id": "ZTFSIN_FI_AM_MASTER",
+        "role_desc": "FI Role for AM Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANUSA",
+        "name": "Anu Swarna A",
+        "role_id": "ZTFSIN_FI_AP_DISPLAY",
+        "role_desc": "Role for FI AP Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANUSA",
+        "name": "Anu Swarna A",
+        "role_id": "ZTFSIN_FI_AP_MAKER",
+        "role_desc": "Role for FI AP Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANUSA",
+        "name": "Anu Swarna A",
+        "role_id": "ZTFSIN_FI_AP_MASTER",
+        "role_desc": "Role for FI AP Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANUSA",
+        "name": "Anu Swarna A",
+        "role_id": "ZTFSIN_FI_AP_PAYMENT",
+        "role_desc": "Role for FI AP Payment",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANUSA",
+        "name": "Anu Swarna A",
+        "role_id": "ZTFSIN_FI_AR_DISPLAY",
+        "role_desc": "FI Role for AR Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANUSA",
+        "name": "Anu Swarna A",
+        "role_id": "ZTFSIN_FI_AR_MAKER",
+        "role_desc": "FI Role for AR Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANUSA",
+        "name": "Anu Swarna A",
+        "role_id": "ZTFSIN_FI_AR_MASTER",
+        "role_desc": "FI Role for AR Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANUSA",
+        "name": "Anu Swarna A",
+        "role_id": "ZTFSIN_FI_GL_DISPLAY",
+        "role_desc": "FI Role for GL Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANUSA",
+        "name": "Anu Swarna A",
+        "role_id": "ZTFSIN_FI_GL_MAKER",
+        "role_desc": "FI Role for GL Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ANUSA",
+        "name": "Anu Swarna A",
+        "role_id": "ZTFSIN_FI_GL_MASTER",
+        "role_desc": "FI Role for GL Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ARUNAG",
+        "name": "ARUNA GOWDA",
+        "role_id": "ZTFSIN_FI_AM_DISPLAY",
+        "role_desc": "FI Role for AM Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ARUNAG",
+        "name": "ARUNA GOWDA",
+        "role_id": "ZTFSIN_FI_AM_MAKER",
+        "role_desc": "FI Role for AM Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ARUNAG",
+        "name": "ARUNA GOWDA",
+        "role_id": "ZTFSIN_FI_AM_MASTER",
+        "role_desc": "FI Role for AM Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ARUNAG",
+        "name": "ARUNA GOWDA",
+        "role_id": "ZTFSIN_FI_AP_DISPLAY",
+        "role_desc": "Role for FI AP Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ARUNAG",
+        "name": "ARUNA GOWDA",
+        "role_id": "ZTFSIN_FI_AP_MAKER",
+        "role_desc": "Role for FI AP Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ARUNAG",
+        "name": "ARUNA GOWDA",
+        "role_id": "ZTFSIN_FI_AP_MASTER",
+        "role_desc": "Role for FI AP Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ARUNAG",
+        "name": "ARUNA GOWDA",
+        "role_id": "ZTFSIN_FI_AP_PAYMENT",
+        "role_desc": "Role for FI AP Payment",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ARUNAG",
+        "name": "ARUNA GOWDA",
+        "role_id": "ZTFSIN_FI_AR_DISPLAY",
+        "role_desc": "FI Role for AR Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ARUNAG",
+        "name": "ARUNA GOWDA",
+        "role_id": "ZTFSIN_FI_AR_MAKER",
+        "role_desc": "FI Role for AR Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ARUNAG",
+        "name": "ARUNA GOWDA",
+        "role_id": "ZTFSIN_FI_AR_MASTER",
+        "role_desc": "FI Role for AR Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ARUNAG",
+        "name": "ARUNA GOWDA",
+        "role_id": "ZTFSIN_FI_GL_DISPLAY",
+        "role_desc": "FI Role for GL Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ARUNAG",
+        "name": "ARUNA GOWDA",
+        "role_id": "ZTFSIN_FI_GL_MAKER",
+        "role_desc": "FI Role for GL Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ARUNAG",
+        "name": "ARUNA GOWDA",
+        "role_id": "ZTFSIN_FI_GL_MASTER",
+        "role_desc": "FI Role for GL Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASHAR",
+        "name": "M Asha Rao",
+        "role_id": "ZTFSIN_FI_AM_DISPLAY",
+        "role_desc": "FI Role for AM Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASHAR",
+        "name": "M Asha Rao",
+        "role_id": "ZTFSIN_FI_AM_MAKER",
+        "role_desc": "FI Role for AM Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASHAR",
+        "name": "M Asha Rao",
+        "role_id": "ZTFSIN_FI_AM_MASTER",
+        "role_desc": "FI Role for AM Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASHAR",
+        "name": "M Asha Rao",
+        "role_id": "ZTFSIN_FI_AP_DISPLAY",
+        "role_desc": "Role for FI AP Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASHAR",
+        "name": "M Asha Rao",
+        "role_id": "ZTFSIN_FI_AP_MAKER",
+        "role_desc": "Role for FI AP Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASHAR",
+        "name": "M Asha Rao",
+        "role_id": "ZTFSIN_FI_AP_MASTER",
+        "role_desc": "Role for FI AP Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASHAR",
+        "name": "M Asha Rao",
+        "role_id": "ZTFSIN_FI_AP_PAYMENT",
+        "role_desc": "Role for FI AP Payment",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASHAR",
+        "name": "M Asha Rao",
+        "role_id": "ZTFSIN_FI_AR_DISPLAY",
+        "role_desc": "FI Role for AR Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASHAR",
+        "name": "M Asha Rao",
+        "role_id": "ZTFSIN_FI_AR_MAKER",
+        "role_desc": "FI Role for AR Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASHAR",
+        "name": "M Asha Rao",
+        "role_id": "ZTFSIN_FI_AR_MASTER",
+        "role_desc": "FI Role for AR Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASHAR",
+        "name": "M Asha Rao",
+        "role_id": "ZTFSIN_FI_GL_DISPLAY",
+        "role_desc": "FI Role for GL Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASHAR",
+        "name": "M Asha Rao",
+        "role_id": "ZTFSIN_FI_GL_MAKER",
+        "role_desc": "FI Role for GL Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASHAR",
+        "name": "M Asha Rao",
+        "role_id": "ZTFSIN_FI_GL_MASTER",
+        "role_desc": "FI Role for GL Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASISHS",
+        "name": "Asish Kumar Sahu",
+        "role_id": "ZTFSIN_FI_AM_DISPLAY",
+        "role_desc": "FI Role for AM Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASISHS",
+        "name": "Asish Kumar Sahu",
+        "role_id": "ZTFSIN_FI_AM_MAKER",
+        "role_desc": "FI Role for AM Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASISHS",
+        "name": "Asish Kumar Sahu",
+        "role_id": "ZTFSIN_FI_AM_MASTER",
+        "role_desc": "FI Role for AM Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASISHS",
+        "name": "Asish Kumar Sahu",
+        "role_id": "ZTFSIN_FI_AP_DISPLAY",
+        "role_desc": "Role for FI AP Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASISHS",
+        "name": "Asish Kumar Sahu",
+        "role_id": "ZTFSIN_FI_AP_MAKER",
+        "role_desc": "Role for FI AP Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASISHS",
+        "name": "Asish Kumar Sahu",
+        "role_id": "ZTFSIN_FI_AP_MASTER",
+        "role_desc": "Role for FI AP Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASISHS",
+        "name": "Asish Kumar Sahu",
+        "role_id": "ZTFSIN_FI_AP_PAYMENT",
+        "role_desc": "Role for FI AP Payment",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASISHS",
+        "name": "Asish Kumar Sahu",
+        "role_id": "ZTFSIN_FI_AR_DISPLAY",
+        "role_desc": "FI Role for AR Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASISHS",
+        "name": "Asish Kumar Sahu",
+        "role_id": "ZTFSIN_FI_AR_MAKER",
+        "role_desc": "FI Role for AR Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASISHS",
+        "name": "Asish Kumar Sahu",
+        "role_id": "ZTFSIN_FI_AR_MASTER",
+        "role_desc": "FI Role for AR Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASISHS",
+        "name": "Asish Kumar Sahu",
+        "role_id": "ZTFSIN_FI_GL_DISPLAY",
+        "role_desc": "FI Role for GL Display",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASISHS",
+        "name": "Asish Kumar Sahu",
+        "role_id": "ZTFSIN_FI_GL_MAKER",
+        "role_desc": "FI Role for GL Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "ASISHS",
+        "name": "Asish Kumar Sahu",
+        "role_id": "ZTFSIN_FI_GL_MASTER",
+        "role_desc": "FI Role for GL Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AYUSHIA",
+        "name": "Ayushi Agarwal",
+        "role_id": "ZTFSIN_TRM_ACCOUNTING",
+        "role_desc": "Role for TRM Accounting",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AYUSHIA",
+        "name": "Ayushi Agarwal",
+        "role_id": "ZTFSIN_TRM_DISPLAY",
+        "role_desc": "Role for TRM Display",
+        "start_date": "11.11.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AYUSHIA",
+        "name": "Ayushi Agarwal",
+        "role_id": "ZTFSIN_TRM_MAKER",
+        "role_desc": "Role for TRM Maker",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "AYUSHIA",
+        "name": "Ayushi Agarwal",
+        "role_id": "ZTFSIN_TRM_MASTER",
+        "role_desc": "Role for TRM Master",
+        "start_date": "03.10.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "BGRFC_USER",
+        "name": "bgRFC Supervisor Destination",
+        "role_id": "SAP_BC_BGRFC_SUPERVISOR",
+        "role_desc": "Authorization Role for bgRFC Supervisor User",
+        "start_date": "13.03.2025",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "BHARATHK",
+        "name": "Chinnapakkirigari Bharath Kumar Reddy",
+        "role_id": "ZTFSIN_FI_AM_DISPLAY",
+        "role_desc": "FI Role for AM Display",
+        "start_date": "13.02.2026",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "BHARATHK",
+        "name": "Chinnapakkirigari Bharath Kumar Reddy",
+        "role_id": "ZTFSIN_FI_AM_MAKER",
+        "role_desc": "FI Role for AM Maker",
+        "start_date": "13.02.2026",
+        "end_date": "31.12.9999"
+      },
+      {
+        "uid": "BHARATHK",
+        "name": "Chinnapakkirigari Bharath Kumar Reddy",
+        "role_id": "ZTFSIN_FI_AM_MASTER",
+        "role_desc": "FI Role for AM Master",
+        "start_date": "13.02.2026",
+        "end_date": "31.12.9999"
+      }
+    ]
+  },
+  "t-code": {
+    "charts": {
+      "Tcodes per Role": {
+        "TRM Display": "108",
+        "TRM Maker": "47",
+        "TRM Checker": "28",
+        "FI AP Display": "24",
+        "GL Display": "21",
+        "GL Maker": "19",
+        "FI AP Maker": "18",
+        "FI AP Checker": "17",
+        "TRM Accounting": "16",
+        "FI AP Payment": "15",
+        "GL Checker": "13",
+        "AM Display": "12"
+      },
+      "Tcode per Role Type": {
+        "TRM": "203",
+        "AP": "0",
+        "GL": "0",
+        "AM": "0",
+        "AR": "0",
+        "Other": "196"
+      }
+    },
+    "table": [
+      {
+        "Role_Id": "",
+        "Role_Desc": "",
+        "T_Code": "",
+        "Tcode_desc": ""
+      }
+    ]
+  },
+  "audit_log": {
+    "kpi": {
+      "Date_Range": {
+        "Title": "12 Days",
+        "Subtitle": "20.03.2026 - 31.03.2026",
+        "Footer": "Granularity: daily"
+      },
+      "Total_Events": {
+        "Title": "200",
+        "Subtitle": "Across 12 dates",
+        "Footer": "Daily grouping applied"
+      },
+      "Most_ActiveUser": {
+        "Title": "PUNITH.J",
+        "Subtitle": "86 events · 43% of total",
+        "Footer": "43% of all audit events"
+      },
+      "Most_used_Tcode": {
+        "Title": "/FSPL/FIR070",
+        "Subtitle": "120 executions",
+        "Footer": "60% of tcode activity"
+      }
+    },
+    "charts": {
+      "Daily Audit Trend": {
+        "data": ""
+      },
+      "User Group Distribution": {
+        "CREDIT-RISK": "42",
+        "FINANCE": "28",
+        "BUSINESS": "34"
+      },
+      "Top User Activity": {
+        "PUNITH.J": "86",
+        "JAYASHANKARV": "34",
+        "KARTHIK.BP": "32",
+        "SAP_BASIS": "23",
+        "ANUSA": "8",
+        "ABHYUDITS": "7",
+        "JAGADISHL": "7",
+        "SAGARS": "2",
+        "RAGESHK": "1"
+      },
+      "Audit Event Classification": {
+        "Other events": "91%",
+        "Dialog logon": "5%",
+        "Transaction start": "5%"
+      }
+    },
+    "table": [
+      {
+        "date": "20.03.2026",
+        "time": "09:26:31",
+        "uid": "ABHYUDITS",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "abhyudit.sarkarab@12345.com"
+      },
+      {
+        "date": "20.03.2026",
+        "time": "09:26:39",
+        "uid": "ABHYUDITS",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "abhyudit.sarkarab@12345.com"
+      },
+      {
+        "date": "20.03.2026",
+        "time": "09:32:33",
+        "uid": "ABHYUDITS",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR026",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "abhyudit.sarkarab@12345.com"
+      },
+      {
+        "date": "20.03.2026",
+        "time": "09:32:42",
+        "uid": "ABHYUDITS",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR026",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "abhyudit.sarkarab@12345.com"
+      },
+      {
+        "date": "20.03.2026",
+        "time": "11:25:15",
+        "uid": "SAP_BASIS",
+        "group": "BUSINESS",
+        "tcode": "",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "21.03.2026",
+        "time": "11:25:16",
+        "uid": "SAP_BASIS",
+        "group": "BUSINESS",
+        "tcode": "",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "22.03.2026",
+        "time": "11:25:18",
+        "uid": "SAP_BASIS",
+        "group": "BUSINESS",
+        "tcode": "",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "23.03.2026",
+        "time": "11:03:01",
+        "uid": "SAGARS",
+        "group": "",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "23.03.2026",
+        "time": "11:03:11",
+        "uid": "SAGARS",
+        "group": "",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "23.03.2026",
+        "time": "11:25:18",
+        "uid": "SAP_BASIS",
+        "group": "",
+        "tcode": "",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "23.03.2026",
+        "time": "13:17:57",
+        "uid": "RAGESHK",
+        "group": "",
+        "tcode": "ZFSINR008",
+        "program": "ZFS_IN_R008",
+        "audit_class": "Dialog logon",
+        "email": "ragesh.krishnanab@12345.com"
+      },
+      {
+        "date": "23.03.2026",
+        "time": "14:02:08",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "23.03.2026",
+        "time": "14:02:08",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "23.03.2026",
+        "time": "14:02:23",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "23.03.2026",
+        "time": "14:02:23",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "23.03.2026",
+        "time": "15:14:15",
+        "uid": "KARTHIK.BP",
+        "group": "",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "23.03.2026",
+        "time": "15:14:17",
+        "uid": "KARTHIK.BP",
+        "group": "",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "23.03.2026",
+        "time": "15:17:41",
+        "uid": "SAP_BASIS",
+        "group": "",
+        "tcode": "ZFSINR029",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "23.03.2026",
+        "time": "15:17:43",
+        "uid": "SAP_BASIS",
+        "group": "",
+        "tcode": "ZFSINR029",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "23.03.2026",
+        "time": "15:18:56",
+        "uid": "SAP_BASIS",
+        "group": "",
+        "tcode": "ZFSINR029",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "23.03.2026",
+        "time": "15:18:58",
+        "uid": "SAP_BASIS",
+        "group": "",
+        "tcode": "ZFSINR029",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "23.03.2026",
+        "time": "15:19:59",
+        "uid": "SAP_BASIS",
+        "group": "",
+        "tcode": "ZFSINR029",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "23.03.2026",
+        "time": "15:20:00",
+        "uid": "SAP_BASIS",
+        "group": "",
+        "tcode": "ZFSINR029",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "23.03.2026",
+        "time": "15:20:36",
+        "uid": "SAP_BASIS",
+        "group": "",
+        "tcode": "ZFSINR029",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "23.03.2026",
+        "time": "15:20:37",
+        "uid": "SAP_BASIS",
+        "group": "",
+        "tcode": "ZFSINR029",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "23.03.2026",
+        "time": "15:21:13",
+        "uid": "SAP_BASIS",
+        "group": "",
+        "tcode": "ZFSINR029",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "23.03.2026",
+        "time": "15:21:15",
+        "uid": "SAP_BASIS",
+        "group": "",
+        "tcode": "ZFSINR029",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "23.03.2026",
+        "time": "15:39:07",
+        "uid": "KARTHIK.BP",
+        "group": "",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "23.03.2026",
+        "time": "15:39:07",
+        "uid": "KARTHIK.BP",
+        "group": "",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "23.03.2026",
+        "time": "15:39:57",
+        "uid": "KARTHIK.BP",
+        "group": "",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "23.03.2026",
+        "time": "15:39:57",
+        "uid": "KARTHIK.BP",
+        "group": "",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "23.03.2026",
+        "time": "15:54:03",
+        "uid": "SAP_BASIS",
+        "group": "",
+        "tcode": "ZFSINR029",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Dialog logon",
+        "email": ""
+      },
+      {
+        "date": "24.03.2026",
+        "time": "09:48:55",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "24.03.2026",
+        "time": "09:48:56",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "24.03.2026",
+        "time": "09:51:54",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "24.03.2026",
+        "time": "09:51:54",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "24.03.2026",
+        "time": "09:52:08",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "24.03.2026",
+        "time": "09:52:08",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "24.03.2026",
+        "time": "10:10:14",
+        "uid": "KARTHIK.BP",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "24.03.2026",
+        "time": "10:10:14",
+        "uid": "KARTHIK.BP",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "24.03.2026",
+        "time": "10:18:25",
+        "uid": "KARTHIK.BP",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "24.03.2026",
+        "time": "10:18:25",
+        "uid": "KARTHIK.BP",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "24.03.2026",
+        "time": "10:23:41",
+        "uid": "KARTHIK.BP",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "24.03.2026",
+        "time": "10:23:41",
+        "uid": "KARTHIK.BP",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "24.03.2026",
+        "time": "10:24:32",
+        "uid": "KARTHIK.BP",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "24.03.2026",
+        "time": "10:24:34",
+        "uid": "KARTHIK.BP",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "24.03.2026",
+        "time": "11:25:20",
+        "uid": "SAP_BASIS",
+        "group": "",
+        "tcode": "",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "24.03.2026",
+        "time": "17:13:35",
+        "uid": "JAYASHANKARV",
+        "group": "",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "24.03.2026",
+        "time": "17:13:42",
+        "uid": "JAYASHANKARV",
+        "group": "",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "25.03.2026",
+        "time": "11:25:21",
+        "uid": "SAP_BASIS",
+        "group": "",
+        "tcode": "",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "25.03.2026",
+        "time": "11:25:48",
+        "uid": "JAYASHANKARV",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "25.03.2026",
+        "time": "11:25:48",
+        "uid": "JAYASHANKARV",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "25.03.2026",
+        "time": "11:26:45",
+        "uid": "JAYASHANKARV",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "25.03.2026",
+        "time": "11:26:45",
+        "uid": "JAYASHANKARV",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "25.03.2026",
+        "time": "11:27:49",
+        "uid": "JAYASHANKARV",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "25.03.2026",
+        "time": "11:27:49",
+        "uid": "JAYASHANKARV",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "25.03.2026",
+        "time": "12:11:22",
+        "uid": "JAYASHANKARV",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "25.03.2026",
+        "time": "12:11:24",
+        "uid": "JAYASHANKARV",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "25.03.2026",
+        "time": "16:32:51",
+        "uid": "JAYASHANKARV",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "25.03.2026",
+        "time": "16:32:51",
+        "uid": "JAYASHANKARV",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "25.03.2026",
+        "time": "16:35:55",
+        "uid": "JAYASHANKARV",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "25.03.2026",
+        "time": "16:35:56",
+        "uid": "JAYASHANKARV",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "25.03.2026",
+        "time": "16:38:02",
+        "uid": "JAYASHANKARV",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "25.03.2026",
+        "time": "16:38:03",
+        "uid": "JAYASHANKARV",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "25.03.2026",
+        "time": "18:39:10",
+        "uid": "ANUSA",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR026",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Dialog logon",
+        "email": "anu.swarrnaab@12345.com"
+      },
+      {
+        "date": "26.03.2026",
+        "time": "09:58:12",
+        "uid": "PUNITH.J",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "26.03.2026",
+        "time": "09:58:12",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "26.03.2026",
+        "time": "09:58:54",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "26.03.2026",
+        "time": "09:58:54",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "26.03.2026",
+        "time": "11:25:21",
+        "uid": "SAP_BASIS",
+        "group": "FINANCE",
+        "tcode": "",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "26.03.2026",
+        "time": "12:33:18",
+        "uid": "JAYASHANKARV",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "26.03.2026",
+        "time": "12:33:18",
+        "uid": "JAYASHANKARV",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "26.03.2026",
+        "time": "12:36:51",
+        "uid": "JAYASHANKARV",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "26.03.2026",
+        "time": "12:36:51",
+        "uid": "JAYASHANKARV",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "26.03.2026",
+        "time": "12:37:07",
+        "uid": "JAYASHANKARV",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "26.03.2026",
+        "time": "12:37:07",
+        "uid": "JAYASHANKARV",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "26.03.2026",
+        "time": "13:04:27",
+        "uid": "JAYASHANKARV",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "26.03.2026",
+        "time": "13:04:29",
+        "uid": "JAYASHANKARV",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "27.03.2026",
+        "time": "11:25:23",
+        "uid": "SAP_BASIS",
+        "group": "CREDIT-RISK",
+        "tcode": "",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "27.03.2026",
+        "time": "12:57:15",
+        "uid": "JAGADISHL",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "jagadish.lattiab@12345.com"
+      },
+      {
+        "date": "27.03.2026",
+        "time": "12:57:17",
+        "uid": "JAGADISHL",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "jagadish.lattiab@12345.com"
+      },
+      {
+        "date": "27.03.2026",
+        "time": "13:09:57",
+        "uid": "JAGADISHL",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Dialog logon",
+        "email": "jagadish.lattiab@12345.com"
+      },
+      {
+        "date": "27.03.2026",
+        "time": "14:21:52",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "27.03.2026",
+        "time": "14:21:52",
+        "uid": "PUNITH.J",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "27.03.2026",
+        "time": "14:22:09",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "27.03.2026",
+        "time": "14:22:09",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "27.03.2026",
+        "time": "14:49:30",
+        "uid": "JAGADISHL",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "jagadish.lattiab@12345.com"
+      },
+      {
+        "date": "27.03.2026",
+        "time": "14:49:32",
+        "uid": "JAGADISHL",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "jagadish.lattiab@12345.com"
+      },
+      {
+        "date": "28.03.2026",
+        "time": "11:25:23",
+        "uid": "SAP_BASIS",
+        "group": "",
+        "tcode": "",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "29.03.2026",
+        "time": "11:25:24",
+        "uid": "SAP_BASIS",
+        "group": "CREDIT-RISK",
+        "tcode": "",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "29.03.2026",
+        "time": "22:33:47",
+        "uid": "KARTHIK.BP",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "29.03.2026",
+        "time": "22:33:53",
+        "uid": "KARTHIK.BP",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "29.03.2026",
+        "time": "23:10:43",
+        "uid": "KARTHIK.BP",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "29.03.2026",
+        "time": "23:10:44",
+        "uid": "KARTHIK.BP",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "29.03.2026",
+        "time": "23:10:59",
+        "uid": "KARTHIK.BP",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "29.03.2026",
+        "time": "23:10:59",
+        "uid": "KARTHIK.BP",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "09:31:51",
+        "uid": "ANUSA",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR026",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "anu.swarrnaab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "09:31:56",
+        "uid": "ANUSA",
+        "group": "",
+        "tcode": "/FSPL/FIR026",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "anu.swarrnaab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:09:22",
+        "uid": "PUNITH.J",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:09:22",
+        "uid": "PUNITH.J",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:09:53",
+        "uid": "PUNITH.J",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:09:53",
+        "uid": "PUNITH.J",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:10:23",
+        "uid": "PUNITH.J",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:10:23",
+        "uid": "PUNITH.J",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:11:35",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:11:35",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:13:25",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:13:25",
+        "uid": "PUNITH.J",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:14:05",
+        "uid": "PUNITH.J",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:14:05",
+        "uid": "PUNITH.J",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:15:01",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:15:02",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:15:59",
+        "uid": "PUNITH.J",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:15:59",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:37:16",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:37:17",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:37:36",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:37:36",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:39:52",
+        "uid": "ANUSA",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR026",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "anu.swarrnaab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "10:39:58",
+        "uid": "ANUSA",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR026",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "anu.swarrnaab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "11:09:05",
+        "uid": "ANUSA",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR026",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Dialog logon",
+        "email": "anu.swarrnaab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "11:25:25",
+        "uid": "SAP_BASIS",
+        "group": "CREDIT-RISK",
+        "tcode": "",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "30.03.2026",
+        "time": "11:52:26",
+        "uid": "JAGADISHL",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "jagadish.lattiab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "11:52:28",
+        "uid": "JAGADISHL",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "jagadish.lattiab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "12:16:03",
+        "uid": "KARTHIK.BP",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "12:16:05",
+        "uid": "KARTHIK.BP",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "12:42:01",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "12:42:01",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "12:42:17",
+        "uid": "PUNITH.J",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "12:42:17",
+        "uid": "PUNITH.J",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "12:43:58",
+        "uid": "PUNITH.J",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Transaction start",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "12:46:56",
+        "uid": "PUNITH.J",
+        "group": "FINANCE",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Transaction start",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "12:47:02",
+        "uid": "PUNITH.J",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Transaction start",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "12:47:06",
+        "uid": "PUNITH.J",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Transaction start",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "12:50:24",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Transaction start",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "12:50:37",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Transaction start",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "12:53:33",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Transaction start",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "12:53:41",
+        "uid": "PUNITH.J",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Transaction start",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "12:54:17",
+        "uid": "PUNITH.J",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Transaction start",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "13:09:32",
+        "uid": "KARTHIK.BP",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "13:09:32",
+        "uid": "KARTHIK.BP",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "13:09:57",
+        "uid": "KARTHIK.BP",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "13:09:57",
+        "uid": "KARTHIK.BP",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "13:27:01",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Dialog logon",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "15:18:19",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "15:18:20",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "15:19:55",
+        "uid": "PUNITH.J",
+        "group": "BUSINESS",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "15:19:55",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "15:28:58",
+        "uid": "PUNITH.J",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "15:28:58",
+        "uid": "PUNITH.J",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "15:30:24",
+        "uid": "PUNITH.J",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "15:30:24",
+        "uid": "PUNITH.J",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "15:30:46",
+        "uid": "PUNITH.J",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "15:30:46",
+        "uid": "PUNITH.J",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "22:20:08",
+        "uid": "KARTHIK.BP",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "22:20:11",
+        "uid": "KARTHIK.BP",
+        "group": "CREDIT-RISK",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "22:34:05",
+        "uid": "KARTHIK.BP",
+        "group": "",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "22:34:05",
+        "uid": "KARTHIK.BP",
+        "group": "",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "22:34:37",
+        "uid": "KARTHIK.BP",
+        "group": "",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "22:34:37",
+        "uid": "KARTHIK.BP",
+        "group": "",
+        "tcode": "/FSPL/FIR072",
+        "program": "ZFS_FI_R0004",
+        "audit_class": "Other events",
+        "email": "karthik.bpab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "23:30:19",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "23:30:19",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "23:31:55",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "23:31:55",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "23:33:03",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "23:33:03",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "23:33:58",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "30.03.2026",
+        "time": "23:33:58",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "10:35:09",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "10:35:09",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "10:36:02",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "10:36:02",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "11:25:26",
+        "uid": "SAP_BASIS",
+        "group": "",
+        "tcode": "",
+        "program": "ZFS_IN_R029",
+        "audit_class": "Other events",
+        "email": ""
+      },
+      {
+        "date": "31.03.2026",
+        "time": "14:05:24",
+        "uid": "ANUSA",
+        "group": "",
+        "tcode": "/FSPL/FIR026",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Dialog logon",
+        "email": "anu.swarrnaab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "14:22:28",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "14:22:28",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "14:24:51",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "14:24:51",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "14:31:45",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "14:31:45",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "14:32:04",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "14:32:04",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "15:29:15",
+        "uid": "JAYASHANKARV",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "15:29:15",
+        "uid": "JAYASHANKARV",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "15:29:30",
+        "uid": "JAYASHANKARV",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "15:29:30",
+        "uid": "JAYASHANKARV",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "16:32:24",
+        "uid": "ANUSA",
+        "group": "",
+        "tcode": "/FSPL/FIR026",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Dialog logon",
+        "email": "anu.swarrnaab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "16:48:23",
+        "uid": "ABHYUDITS",
+        "group": "",
+        "tcode": "/FSPL/FIR026",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "abhyudit.sarkarab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "16:48:28",
+        "uid": "ABHYUDITS",
+        "group": "",
+        "tcode": "/FSPL/FIR026",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "abhyudit.sarkarab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "17:05:57",
+        "uid": "JAYASHANKARV",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "17:05:57",
+        "uid": "JAYASHANKARV",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "17:06:18",
+        "uid": "JAYASHANKARV",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "17:06:18",
+        "uid": "JAYASHANKARV",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "17:19:14",
+        "uid": "JAYASHANKARV",
+        "group": "",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "17:19:15",
+        "uid": "JAYASHANKARV",
+        "group": "",
+        "tcode": "/FSPL/FIR074",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Other events",
+        "email": "jayashankar.vab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "17:30:46",
+        "uid": "ABHYUDITS",
+        "group": "",
+        "tcode": "/FSPL/FIR026",
+        "program": "ZFS_FI_R0006",
+        "audit_class": "Dialog logon",
+        "email": "abhyudit.sarkarab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "17:55:57",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "17:55:57",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "17:56:29",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      },
+      {
+        "date": "31.03.2026",
+        "time": "17:56:29",
+        "uid": "PUNITH.J",
+        "group": "",
+        "tcode": "/FSPL/FIR070",
+        "program": "ZFS_FI_R0007",
+        "audit_class": "Other events",
+        "email": "v-punith.jab@12345.com"
+      }
+    ]
+  },
+   "combined_view": {
+    "kpi": {
+      "High_Risk_Users": {
+        "Title": "3",
+        "Subtitle": "Inactive accounts with active role assignments",
+        "Footer": "Require immediate deprovisioning review"
+      },
+      "Users_Audit": {
+        "Title": "9",
+        "Subtitle": "Have at least 1 recorded audit event",
+        "Footer": "13% of total users"
+      },
+      "Avg_Tcode": {
+        "Title": "105",
+        "Subtitle": "Average T-codes accessible per user via L2→L3",
+        "Footer": "Across 72 users in L1"
+      },
+      "Cross_Mapping": {
+        "Title": "438",
+        "Subtitle": "Total L1↔L2 role assignment links",
+        "Footer": "Avg 6 roles per user"
+      }
+    },
+    "charts": {
+      "Access vs Usage": {
+        "PUNITH.J": {
+          "AUDIT_EVENT": "86",
+          "ROLES_ASSIGNED": "13",
+          "TCODE_ACCESS": "134"
+        },
+        "JAYASHANKARV": {
+          "AUDIT_EVENT": "34",
+          "ROLES_ASSIGNED": "13",
+          "TCODE_ACCESS": "134"
+        },
+        "KARTHIK.BP": {
+          "AUDIT_EVENT": "32",
+          "ROLES_ASSIGNED": "13",
+          "TCODE_ACCESS": "134"
+        },
+        "ANUSA": {
+          "AUDIT_EVENT": "8",
+          "ROLES_ASSIGNED": "13",
+          "TCODE_ACCESS": "134"
+        },
+        "SAGARS": {
+          "AUDIT_EVENT": "2",
+          "ROLES_ASSIGNED": "13",
+          "TCODE_ACCESS": "134"
+        },
+        "RAGESHK": {
+          "AUDIT_EVENT": "1",
+          "ROLES_ASSIGNED": "2",
+          "TCODE_ACCESS": "135"
+        },
+        "AMOGHAK": {
+          "AUDIT_EVENT": "0",
+          "ROLES_ASSIGNED": "5",
+          "TCODE_ACCESS": "159"
+        },
+        "ANATHAP": {
+          "AUDIT_EVENT": "0",
+          "ROLES_ASSIGNED": "8",
+          "TCODE_ACCESS": "86"
+        }
+      },
+      "Roles Vs Audit": {
+        "PUNITH.J": {
+          "Roles": "13",
+          "Audit": "86"
+        },
+        "JAYASHANKARV": {
+          "Roles": "13",
+          "Audit": "34"
+        },
+        "KARTHIK.BP": {
+          "Roles": "13",
+          "Audit": "32"
+        },
+        "SAP_BASIS": {
+          "Roles": "0",
+          "Audit": "23"
+        },
+        "ANUSA": {
+          "Roles": "13",
+          "Audit": "8"
+        },
+        "ABHYUDITS": {
+          "Roles": "0",
+          "Audit": "7"
+        },
+        "JAGADISHL": {
+          "Roles": "13",
+          "Audit": "7"
+        },
+        "SAGARS": {
+          "Roles": "13",
+          "Audit": "2"
+        },
+        "RAGESHK": {
+          "Roles": "2",
+          "Audit": "1"
+        },
+        "AMOGHK": {
+          "Roles": "5",
+          "Audit": "0"
+        },
+        "ANANTHAP": {
+          "Roles": "8",
+          "Audit": "0"
+        }
+      },
+      "Tcode per User": {
+        "SURYAN": "190",
+        "AYUSHIA": "164",
+        "DEEPIKAS": "164",
+        "JAYASHREEB": "164",
+        "KANISHK": "164",
+        "SNEHAD": "164",
+        "AMOGHAK": "159",
+        "GOWTHAMR": "159",
+        "MTEJA": "159",
+        "NARASIM": "159"
+      }
+    }
+  }
+}

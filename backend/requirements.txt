@@ -1,0 +1,6 @@
+azure-functions
+fastapi
+uvicorn
+azure-storage-blob
+pyjwt
+pydantic
