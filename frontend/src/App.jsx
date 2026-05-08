@@ -16,7 +16,6 @@ import { Spinner, ErrorMsg } from "./components/ui/helpers";
 import { useDashboardData } from "./hooks/useDashboardData";
 import Analytics from "./pages/Analytics";
 import Users from "./pages/Users";
-import BorrowingsDashboard from "./dashboards/borrowings";
 // import mockData from "./data/mockOverview.json";
 import React from "react";
 
@@ -77,8 +76,8 @@ export default function App() {
       case "audit":
         return <Audit data={data} />;
 
-        case "combinedView":
-  return <CombinedView data={data} />;
+      case "combinedView":
+        return <CombinedView data={data} />;
 
       case "rateTrends":
         return <Rates data={data} />;
@@ -153,6 +152,29 @@ export default function App() {
     );
   };
   return (
-    <BorrowingsDashboard />
+    <div className="wrapper">
+      <Sidebar activePage={page} onNavigate={setPage} />
+
+      <div className="main-area">
+        <Header
+          title={PAGE_TITLES[page]}
+          subtitle={DASHBOARD_SUBTITLE}
+          darkMode={darkMode}
+          onToggleDark={toggleDark}
+          activePage={page}
+          setActivePage={setPage}
+          setIsExportingFull={setIsExportingFull}
+          setExportStatus={setExportStatus}
+        />
+
+        <div className="page-content">
+          {loading && <Spinner />}
+          {error && <ErrorMsg message={error} />}
+          {!loading && !error && renderPage()}
+        </div>
+      </div>
+
+      <ExportOverlay status={exportStatus} />
+    </div>
   );
 }
