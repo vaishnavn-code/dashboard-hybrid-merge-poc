@@ -16,6 +16,7 @@ import { Spinner, ErrorMsg } from "./components/ui/helpers";
 import { useDashboardData } from "./hooks/useDashboardData";
 import Analytics from "./pages/Analytics";
 import Users from "./pages/Users";
+import UserDashboard from "./dashboards/user-dashboard";
 // import mockData from "./data/mockOverview.json";
 import React from "react";
 
