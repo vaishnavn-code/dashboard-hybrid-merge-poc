@@ -1,0 +1,133 @@
+// src/app/BaseDashboard.jsx
+
+import { useState } from "react";
+import Sidebar from "../components/layout/Sidebar";
+import Header from "../components/layout/Header";
+import Overview from "../pages/Overview";
+import Audit from "../pages/Audit";
+import Roles from "../pages/Roles";
+import TCode from "../pages/TCode";
+import Analytics from "../pages/Analytics";
+import Users from "../pages/Users";
+import { Spinner, ErrorMsg } from "../components/ui/helpers";
+import { useDashboardData } from "../hooks/useDashboardData";
+
+const DASHBOARD_SUBTITLE = "COF Dashboard · v14 · All Amounts in INR Crores";
+
+const PAGE_TITLES = {
+  overview: "Overview",
+  users: "Users",
+  tcode: "T-Codes",
+  audit: "Audit Log",
+  roles: "Roles",
+  analytics: "Analytics",
+  combinedView: "Combined View",
+};
+
+export default function BaseDashboard() {
+  const [isExportingFull, setIsExportingFull] = useState(false);
+  const [exportStatus, setExportStatus] = useState("");
+  const [page, setPage] = useState("overview");
+  const [darkMode, setDark] = useState(false);
+  const { data, loading, error } = useDashboardData();
+
+  const toggleDark = () => {
+    const next = !darkMode;
+    setDark(next);
+    document.documentElement.setAttribute("data-theme", next ? "dark" : "");
+  };
+
+  const renderPage = () => {
+    if (!data) return null;
+
+    switch (page) {
+      case "overview":
+        return <Overview data={data} />;
+
+      case "analytics":
+        return <Analytics data={data} />;
+
+      case "users":
+        return <Users data={data} />;
+
+      case "roles":
+        return <Roles data={data} />;
+
+      case "tcode":
+        return <TCode data={data} />;
+
+      case "audit":
+        return <Audit data={data} />;
+
+      default:
+        return <Overview data={data} />;
+    }
+  };
+
+  const ExportOverlay = ({ status }) => {
+    if (!status) return null;
+
+    return (
+      <div
+        id="export-overlay"
+        style={{
+          position: "fixed",
+          inset: 0,
+          background: "rgba(255, 255, 255, 0.9)",
+          backdropFilter: "blur(6px)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          zIndex: 999999,
+          pointerEvents: "none",
+        }}
+      >
+        <div
+          style={{
+            background: "#fff",
+            color: "#111",
+            padding: "40px 50px",
+            borderRadius: 16,
+            textAlign: "center",
+            boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
+            minWidth: "340px",
+          }}
+        >
+          <div style={{ fontSize: "20px", fontWeight: 700, marginBottom: 16 }}>
+            Exporting Full Report
+          </div>
+          <div style={{ fontSize: "15px", color: "#1565c0", marginBottom: 20 }}>
+            {status}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <div className="wrapper">
+      <Sidebar activePage={page} onNavigate={setPage} />
+
+      <div className="main-area">
+        <Header
+          title={PAGE_TITLES[page]}
+          subtitle={DASHBOARD_SUBTITLE}
+          darkMode={darkMode}
+          onToggleDark={toggleDark}
+          activePage={page}
+          setActivePage={setPage}
+          setIsExportingFull={setIsExportingFull}
+          setExportStatus={setExportStatus}
+        />
+
+        <div className="page-content">
+          {loading && <Spinner />}
+          {error && <ErrorMsg message={error} />}
+          {!loading && !error && renderPage()}
+        </div>
+      </div>
+
+      <ExportOverlay status={exportStatus} />
+    </div>
+  );
+}
