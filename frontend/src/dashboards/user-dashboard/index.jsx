@@ -1,4 +1,6 @@
 import UserDashboardApp from "./App";
+import "./styles/globals.css";
+
 
 export default function UserDashboard() {
   return (

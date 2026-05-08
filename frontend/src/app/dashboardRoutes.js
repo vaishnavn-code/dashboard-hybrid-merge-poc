@@ -23,7 +23,7 @@ export const DASHBOARD_ROUTES = {
   },
 
   "user-dashboard": {
-    title: "User Dashboard",
+    title: "User Governance Dashboard",
     type: "legacy",
     component: UserDashboard,
   },

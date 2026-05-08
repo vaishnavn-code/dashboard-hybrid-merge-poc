@@ -1,5 +1,3 @@
-console.log("ENV VALUE:", import.meta.env.VITE_API_BASE_URL);
-console.log("NEW BUILD WORKING 🚀");
 
 import { useState, Suspense, useEffect, useRef } from "react";
 import domtoimage from 'dom-to-image';
@@ -39,6 +37,15 @@ export const apiClient = axios.create({
   baseURL: resolvedApiBase,
   timeout: 15000,
 });
+
+function getAuthFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+
+  return {
+    sessionId: params.get("session_id"),
+    token: params.get("token"),
+  };
+}
 
 /* ── Request interceptor ───────────────────────── */
 apiClient.interceptors.request.use((config) => {
@@ -1164,7 +1171,7 @@ export default function App() {
   const pageTitle = PAGE_TITLES[activePage] ?? "Dashboard";
 
   return (
-    <div className="wrapper">
+    <div className="user-dashboard-wrapper wrapper">
       <div id="chart-tooltip">
         <div id="tt-header" style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <div id="tt-header-dot" style={{ width: 8, height: 8, borderRadius: "50%", background: "#1565c0" }} />
@@ -1255,7 +1262,7 @@ const styles = {
   pageTitle: {
     fontSize: "1.25rem",
     fontWeight: 700,
-      letterSpacing: "0.5px",     
+    letterSpacing: "0.5px",
     lineHeight: "1.4",
     marginBottom: "4px",
   },
