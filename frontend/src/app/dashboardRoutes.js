@@ -2,6 +2,7 @@ import BaseDashboard from "./BaseDashboard";
 import BorrowingsDashboard from "../dashboards/borrowings";
 import NiExposureDashboard from "../dashboards/ni-exposure";
 import UserDashboard from "../dashboards/user-dashboard";
+import CustomerMasterDashboard from "../dashboards/customer-master";
 
 export const DASHBOARD_ROUTES = {
   base: {
@@ -26,5 +27,11 @@ export const DASHBOARD_ROUTES = {
     title: "User Governance Dashboard",
     type: "legacy",
     component: UserDashboard,
+  },
+
+  "customer-master": {
+    title: "Customer Master Dashboard",
+    type: "config-driven",
+    component: CustomerMasterDashboard,
   },
 };
