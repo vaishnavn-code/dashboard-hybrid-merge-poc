@@ -67,6 +67,9 @@ export const geographicConfig = {
       title: "Customer Count by State",
       subtitle: "STATE-WISE CUSTOMER DISTRIBUTION",
       dataPath: "customerCountByState",
+      slantLabels: true,
+      limitOptions: [5, 10, 15, 20],
+      defaultLimit: 10,
     },
     {
       section: "twoCol",
@@ -82,6 +85,8 @@ export const geographicConfig = {
       subtitle: "CITY-WISE CUSTOMER DISTRIBUTION",
       dataPath: "topCitiesByCount",
       slantLabels: true,
+      limitOptions: [5, 10, 15, 20],
+      defaultLimit: 10,
     },
   ],
 

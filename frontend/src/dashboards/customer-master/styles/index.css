@@ -2927,3 +2927,545 @@ header {
   border: 1px dashed #cce0f5;
   border-radius: 10px;
 }
+.chart-limit-select {
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--blue-dark);
+  border-radius: 8px;
+  padding: 7px 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  min-width: 82px;
+}
+
+.chart-limit-select:hover {
+  border-color: var(--blue-light);
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.08);
+}
+
+.customer-table-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.customer-table-search,
+.customer-table-select {
+  height: 38px;
+  border: 1px solid #c7dff6;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--blue-dark);
+  border-radius: 9px;
+  padding: 0 14px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.customer-table-search {
+  min-width: 260px;
+  color: var(--text);
+}
+
+.customer-table-search::placeholder {
+  color: #7a8da3;
+  font-weight: 500;
+}
+
+.customer-table-select {
+  min-width: 170px;
+  cursor: pointer;
+}
+
+.customer-table-select-wide {
+  min-width: 310px;
+}
+
+.customer-table-search:focus,
+.customer-table-select:focus {
+  border-color: var(--blue-light);
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+}
+
+.customer-table-clear-btn {
+  height: 38px;
+  border: 1px solid #90caf9;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--blue-dark);
+  border-radius: 9px;
+  padding: 0 16px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.customer-table-clear-btn:hover {
+  background: var(--blue-pale);
+  border-color: var(--blue);
+}
+
+.banking-table-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.banking-table-search {
+  height: 38px;
+  min-width: 270px;
+  border: 1px solid #c7dff6;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--text);
+  border-radius: 9px;
+  padding: 0 14px;
+  font-size: 0.86rem;
+  font-weight: 500;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.banking-table-search::placeholder {
+  color: #7a8da3;
+  font-weight: 500;
+}
+
+.banking-table-search:focus {
+  border-color: var(--blue-light);
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+}
+
+.banking-table-clear-btn {
+  height: 38px;
+  border: 1px solid #90caf9;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--blue-dark);
+  border-radius: 9px;
+  padding: 0 16px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.banking-table-clear-btn:hover {
+  background: var(--blue-pale);
+  border-color: var(--blue);
+}
+.tax-table-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.tax-table-search,
+.tax-table-select {
+  height: 38px;
+  border: 1px solid #c7dff6;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--blue-dark);
+  border-radius: 9px;
+  padding: 0 14px;
+  font-size: 0.86rem;
+  font-weight: 500;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.tax-table-search {
+  min-width: 270px;
+  color: var(--text);
+}
+
+.tax-table-select {
+  min-width: 310px;
+  cursor: pointer;
+}
+
+.tax-table-search::placeholder {
+  color: #7a8da3;
+  font-weight: 500;
+}
+
+.tax-table-search:focus,
+.tax-table-select:focus {
+  border-color: var(--blue-light);
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+}
+
+.tax-table-clear-btn {
+  height: 38px;
+  border: 1px solid #90caf9;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--blue-dark);
+  border-radius: 9px;
+  padding: 0 16px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tax-table-clear-btn:hover {
+  background: var(--blue-pale);
+  border-color: var(--blue);
+}
+
+.tax-alert-box {
+  min-height: 88px;
+  border-radius: 14px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  border: 1px solid;
+}
+
+.tax-alert-warn {
+  background: #fff3df;
+  border-color: #ffb74d;
+}
+
+.tax-alert-danger {
+  background: #ffe0e5;
+  border-color: #ff8a8a;
+}
+
+.tax-alert-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.tax-alert-warn .tax-alert-icon {
+  background: #fb8c00;
+}
+
+.tax-alert-danger .tax-alert-icon {
+  background: #ef5350;
+}
+
+.tax-alert-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.tax-alert-title {
+  color: #102b4e;
+  font-size: 0.92rem;
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+
+.tax-alert-text {
+  color: #23588d;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.tax-alert-footer {
+  color: #23588d;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  margin-top: 2px;
+}
+
+.tax-alert-count {
+  color: #fb8c00;
+  font-size: 1.75rem;
+  font-weight: 900;
+  min-width: 34px;
+  text-align: right;
+}
+
+.tax-alert-danger .tax-alert-count {
+  color: #ef5350;
+}
+.geo-table-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.geo-table-search {
+  height: 38px;
+  min-width: 270px;
+  border: 1px solid #c7dff6;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--text);
+  border-radius: 9px;
+  padding: 0 14px;
+  font-size: 0.86rem;
+  font-weight: 500;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.geo-table-search::placeholder {
+  color: #7a8da3;
+  font-weight: 500;
+}
+
+.geo-table-search:focus {
+  border-color: var(--blue-light);
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+}
+
+.geo-table-clear-btn {
+  height: 38px;
+  border: 1px solid #90caf9;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--blue-dark);
+  border-radius: 9px;
+  padding: 0 16px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.geo-table-clear-btn:hover {
+  background: var(--blue-pale);
+  border-color: var(--blue);
+}
+.geo-state-value {
+  color: #102b4e;
+  font-weight: 900;
+}
+
+.geo-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 42px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1;
+  border: 1px solid transparent;
+}
+
+.geo-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.geo-badge-blue {
+  background: #e3f2fd;
+  color: #1565c0;
+  border-color: #bbdefb;
+}
+
+.geo-badge-blue::before {
+  background: #1565c0;
+}
+
+.geo-badge-green {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-color: #c8e6c9;
+}
+
+.geo-badge-green::before {
+  background: #2e7d32;
+}
+
+.geo-badge-yellow {
+  background: #fff8e1;
+  color: #f57c00;
+  border-color: #ffe0b2;
+}
+
+.geo-badge-yellow::before {
+  background: #f57c00;
+}
+.tax-bp-value {
+  color: #102b4e;
+  font-weight: 900;
+}
+
+.tax-muted-value {
+  color: #64748b;
+  font-weight: 700;
+}
+
+.tax-table-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 42px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.tax-table-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tax-badge-red {
+  background: #ffebee;
+  color: #c62828;
+  border-color: #ffcdd2;
+}
+
+.tax-badge-red::before {
+  background: #c62828;
+}
+
+.tax-badge-grey {
+  background: #f1f5f9;
+  color: #64748b;
+  border-color: #cbd5e1;
+}
+
+.tax-badge-grey::before {
+  background: #64748b;
+}
+.banking-bp-value {
+  color: #102b4e;
+  font-weight: 900;
+}
+
+.banking-table-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 42px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.banking-table-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.banking-badge-grey {
+  background: #f1f5f9;
+  color: #64748b;
+  border-color: #cbd5e1;
+}
+
+.banking-badge-grey::before {
+  background: #64748b;
+}
+
+.banking-badge-green {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-color: #c8e6c9;
+}
+
+.banking-badge-green::before {
+  background: #2e7d32;
+}
+.cm-bp-value {
+  color: #102b4e;
+  font-weight: 900;
+}
+
+.cm-table-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 42px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.cm-table-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cm-badge-grey {
+  background: #f1f5f9;
+  color: #64748b;
+  border-color: #cbd5e1;
+}
+
+.cm-badge-grey::before {
+  background: #64748b;
+}
+
+.cm-badge-blue {
+  background: #e3f2fd;
+  color: #1565c0;
+  border-color: #bbdefb;
+}
+
+.cm-badge-blue::before {
+  background: #1565c0;
+}
+
+.cm-badge-red {
+  background: #ffebee;
+  color: #c62828;
+  border-color: #ffcdd2;
+}
+
+.cm-badge-red::before {
+  background: #c62828;
+}
+
+.cm-badge-green {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-color: #c8e6c9;
+}
+
+.cm-badge-green::before {
+  background: #2e7d32;
+}

@@ -10,25 +10,17 @@ export const customerMasterConfig = {
       iconName: "personFolder",
       accent: "c1",
       sparkPct: 100,
-      badge: {
-        label: "Customers",
-        bgColor: "#E8F1FF",
-        textColor: "#1D4ED8",
-      },
+      badgePath: "kpis.totalCustomers.badge",
     },
     {
       label: "With Bank Account",
       valuePath: "kpis.withBankAccount.title",
       subPath: "kpis.withBankAccount.subtitle",
       footerPath: "kpis.withBankAccount.footer",
-      iconName: "storage",
+      iconName: "withBankAccount",
       accent: "c2",
       sparkPct: 65,
-      badge: {
-        label: "Banking",
-        bgColor: "#E0F7FA",
-        textColor: "#00ACC1",
-      },
+      badgePath: "kpis.withBankAccount.badge",
     },
     {
       label: "GSTIN Registered",
@@ -38,25 +30,17 @@ export const customerMasterConfig = {
       iconName: "document",
       accent: "c3",
       sparkPct: 77,
-      badge: {
-        label: "GST",
-        bgColor: "#E8F5E9",
-        textColor: "#43A047",
-      },
+      badgePath: "kpis.gstinRegistered.badge",
     },
     {
       label: "States Covered",
       valuePath: "kpis.statesCovered.title",
       subPath: "kpis.statesCovered.subtitle",
       footerPath: "kpis.statesCovered.footer",
-      iconName: "graph",
+      iconName: "location",
       accent: "c4",
       sparkPct: 39,
-      badge: {
-        label: "Geo",
-        bgColor: "#FFF3E0",
-        textColor: "#FB8C00",
-      },
+      badgePath: "kpis.statesCovered.badge",
     },
   ],
 
@@ -65,20 +49,18 @@ export const customerMasterConfig = {
       section: "twoCol",
       type: "verticalBarWithLine",
       title: "Customers by State / Region",
-      subtitle: "GEOGRAPHIC DISTRIBUTION",
+      barSize: 46,
+      subtitle: "GEOGRAPHIC DISTRIBUTION & SHARE %",
       dataPath: "customersByRegion",
 
-      controls: {
-        badge: "Region",
-        options: ["AUTO"],
-        defaultValue: "AUTO",
-        helperText: "Bars = Total / With Bank | Line = No Bank",
-      },
+      limitOptions: [5, 10, 15, 20],
+      defaultLimit: 10,
+      slantLabels: true,
 
       axis: {
         xLabel: "State / Region",
-        yLeftLabel: "Customers",
-        yRightLabel: "No Bank",
+        yLeftLabel: "Count",
+        yRightLabel: "Share %",
       },
     },
     {
@@ -102,7 +84,8 @@ export const customerMasterConfig = {
       subtitle: "CITY DISTRIBUTION",
       dataPath: "topCities",
       slantLabels: true,
-
+      limitOptions: [5, 10, 15, 20],
+      defaultLimit: 10,
     },
     {
       section: "twoCol",
@@ -110,13 +93,16 @@ export const customerMasterConfig = {
       title: "Bank Coverage by State",
       subtitle: "WITH BANK CUSTOMERS BY STATE",
       dataPath: "bankCoverageByState",
+      slantLabels: true,
+      limitOptions: [5, 10, 15, 20],
+      defaultLimit: 10,
     },
     {
       section: "twoCol",
       type: "donut",
       title: "Reconciliation Account Split",
       subtitle: "RECON ACCOUNT TYPE DISTRIBUTION",
-      dataPath: "reconciliationSplit",  
+      dataPath: "reconciliationSplit",
     },
   ],
 };

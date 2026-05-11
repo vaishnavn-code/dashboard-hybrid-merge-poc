@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import { customerMasterPageConfig } from "../configs/customerMasterPage.config";
 import { mapCustomerMasterPage } from "../mappers/customerMasterPageMapper";
 import KpiCard from "../components/ui/KpiCard";
@@ -67,6 +67,9 @@ function DuplicateGroupCard({ section, groups }) {
 }
 
 export default function CustomerMaster({ data }) {
+  const [searchText, setSearchText] = useState("");
+  const [selectedRegion, setSelectedRegion] = useState("ALL");
+  const [selectedWht, setSelectedWht] = useState("ALL");
   const mappedData = mapCustomerMasterPage(data);
   const summary = mappedData.summary || {};
 
@@ -74,6 +77,61 @@ export default function CustomerMaster({ data }) {
     getByPath(mappedData, customerMasterPageConfig.table.dataPath, []) || [];
 
   const columns = customerMasterPageConfig.table.columns;
+
+  const regionOptions = useMemo(() => {
+    return Array.from(
+      new Set(
+        tableRows
+          .map((row) => row.region)
+          .filter((value) => value && value !== "--"),
+      ),
+    ).sort();
+  }, [tableRows]);
+
+  const whtOptions = useMemo(() => {
+    return Array.from(
+      new Set(
+        tableRows
+          .map((row) => row.wht_category)
+          .filter((value) => value && value !== "--"),
+      ),
+    ).sort();
+  }, [tableRows]);
+
+  const filteredRows = useMemo(() => {
+    const search = searchText.trim().toLowerCase();
+
+    return tableRows.filter((row) => {
+      const matchesSearch =
+        !search ||
+        String(row.bp_no || "")
+          .toLowerCase()
+          .includes(search) ||
+        String(row.customer_acct || "")
+          .toLowerCase()
+          .includes(search) ||
+        String(row.name || "")
+          .toLowerCase()
+          .includes(search) ||
+        String(row.city || "")
+          .toLowerCase()
+          .includes(search);
+
+      const matchesRegion =
+        selectedRegion === "ALL" || row.region === selectedRegion;
+
+      const matchesWht =
+        selectedWht === "ALL" || row.wht_category === selectedWht;
+
+      return matchesSearch && matchesRegion && matchesWht;
+    });
+  }, [tableRows, searchText, selectedRegion, selectedWht]);
+
+  const clearFilters = () => {
+    setSearchText("");
+    setSelectedRegion("ALL");
+    setSelectedWht("ALL");
+  };
 
   return (
     <div>
@@ -111,7 +169,7 @@ export default function CustomerMaster({ data }) {
             iconName={item.iconName}
             accent={item.accent}
             sparkPct={item.sparkPct}
-            badge={item.badge}
+            badge={getByPath(mappedData, item.badgePath, item.badge)}
           />
         ))}
       </div>
@@ -140,7 +198,7 @@ export default function CustomerMaster({ data }) {
         style={{ marginBottom: "16px", alignItems: "start" }}
       >
         {(customerMasterPageConfig.duplicateSections || [])
-          .slice(0, 2)
+          .slice(2, 4)
           .map((section) => (
             <DuplicateGroupCard
               key={section.title}
@@ -151,6 +209,48 @@ export default function CustomerMaster({ data }) {
       </div>
 
       <div className="chart-card" style={{ marginTop: "20px" }}>
+        <div className="customer-table-filter-row">
+          <input
+            className="customer-table-search"
+            value={searchText}
+            onChange={(event) => setSearchText(event.target.value)}
+            placeholder="Search BP, Name, City..."
+          />
+
+          <select
+            className="customer-table-select"
+            value={selectedRegion}
+            onChange={(event) => setSelectedRegion(event.target.value)}
+          >
+            <option value="ALL">All Regions</option>
+            {regionOptions.map((region) => (
+              <option key={region} value={region}>
+                {region}
+              </option>
+            ))}
+          </select>
+
+          <select
+            className="customer-table-select customer-table-select-wide"
+            value={selectedWht}
+            onChange={(event) => setSelectedWht(event.target.value)}
+          >
+            <option value="ALL">All WHT Types</option>
+            {whtOptions.map((wht) => (
+              <option key={wht} value={wht}>
+                {wht}
+              </option>
+            ))}
+          </select>
+
+          <button
+            type="button"
+            className="customer-table-clear-btn"
+            onClick={clearFilters}
+          >
+            Clear Filters
+          </button>
+        </div>
         <div className="chart-header">
           <div>
             <div className="chart-title">
@@ -173,24 +273,99 @@ export default function CustomerMaster({ data }) {
             </thead>
 
             <tbody>
-              {tableRows.map((row, index) => (
+              {filteredRows.map((row, index) => (
                 <tr key={`${row.bp_no || "row"}-${index}`}>
-                  {columns.map((column) => (
-                    <td key={column.key}>
-                      {row[column.key] === "" || row[column.key] == null
+                  {columns.map((column) => {
+                    const cellValue =
+                      row[column.key] === "" || row[column.key] == null
                         ? "--"
-                        : row[column.key]}
-                    </td>
-                  ))}
+                        : row[column.key];
+
+                    if (column.key === "bp_no") {
+                      return (
+                        <td key={column.key}>
+                          <span className="cm-bp-value">{cellValue}</span>
+                        </td>
+                      );
+                    }
+
+                    if (column.key === "bp_type") {
+                      return (
+                        <td key={column.key}>
+                          <span className="cm-table-badge cm-badge-grey">
+                            {cellValue}
+                          </span>
+                        </td>
+                      );
+                    }
+
+                    if (column.key === "wht_category") {
+                      return (
+                        <td key={column.key}>
+                          <span className="cm-table-badge cm-badge-blue">
+                            {cellValue}
+                          </span>
+                        </td>
+                      );
+                    }
+
+                    if (column.key === "withholding_subj") {
+                      return (
+                        <td key={column.key}>
+                          <span className="cm-table-badge cm-badge-grey">
+                            {cellValue}
+                          </span>
+                        </td>
+                      );
+                    }
+
+                    if (column.key === "gstin") {
+                      return (
+                        <td key={column.key}>
+                          <span className="cm-table-badge cm-badge-red">
+                            {cellValue}
+                          </span>
+                        </td>
+                      );
+                    }
+
+                    if (column.key === "bank") {
+                      const isYes = String(cellValue).toLowerCase() === "yes";
+
+                      return (
+                        <td key={column.key}>
+                          <span
+                            className={`cm-table-badge ${
+                              isYes ? "cm-badge-green" : "cm-badge-grey"
+                            }`}
+                          >
+                            {cellValue}
+                          </span>
+                        </td>
+                      );
+                    }
+
+                    if (column.key === "recon_acct" || column.key === "name") {
+                      return (
+                        <td key={column.key}>
+                          <span className="cm-table-badge cm-badge-grey">
+                            {cellValue}
+                          </span>
+                        </td>
+                      );
+                    }
+
+                    return <td key={column.key}>{cellValue}</td>;
+                  })}
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
-        {tableRows.length === 0 && (
+        {filteredRows.length === 0 && (
           <div style={{ padding: "20px", color: "#6a7280" }}>
-            No customer master records available.
+            No matching customer master records available.
           </div>
         )}
       </div>

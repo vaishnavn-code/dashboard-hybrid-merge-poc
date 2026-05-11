@@ -7,38 +7,56 @@ function toNumber(value) {
 }
 
 function toChartData(obj = {}) {
-  return Object.entries(obj).map(([name, value]) => ({
-    name,
-    value: toNumber(value),
-  }));
+  return Object.entries(obj)
+    .map(([name, value]) => ({
+      name,
+      value: toNumber(value),
+    }))
+    .sort((a, b) => b.value - a.value);
 }
 
 function toBankCoverageByState(obj = {}) {
-  return Object.entries(obj).map(([name, item]) => ({
-    name,
-    value: toNumber(item?.["With Bank"]),
-  }));
+  return Object.entries(obj)
+    .map(([name, item]) => ({
+      name,
+      value: toNumber(item?.["With Bank"]),
+    }))
+    .sort((a, b) => b.value - a.value);
 }
 
-function mapKpiItem(item) {
+function mapKpiItem(item, badge = null) {
   return {
     title: item?.Title ?? "-",
     subtitle: item?.Subtitle ?? "",
     footer: item?.Footer ?? "",
+    badge,
   };
 }
 
-function toRegionBarWithLineData(regionCounts = {}, bankCoverage = {}) {
-  return Object.entries(regionCounts).map(([name, total]) => {
-    const coverage = bankCoverage?.[name] || {};
+function extractPercent(text, suffix) {
+  const match = String(text || "").match(/(\d+)%/);
+  return match ? `${match[1]}% ${suffix}` : suffix;
+}
 
-    return {
-      name,
-      opening: toNumber(total),
-      closing: toNumber(coverage?.["With Bank"]),
-      eir: toNumber(coverage?.["No Bank"]),
-    };
-  });
+function toRegionBarWithLineData(regionCounts = {}) {
+  const totalCustomers = Object.values(regionCounts).reduce(
+    (sum, value) => sum + toNumber(value),
+    0,
+  );
+
+  return Object.entries(regionCounts)
+    .map(([name, total]) => {
+      const customerCount = toNumber(total);
+
+      return {
+        name,
+        opening: customerCount,
+        eir: totalCustomers
+          ? Number(((customerCount / totalCustomers) * 100).toFixed(2))
+          : 0,
+      };
+    })
+    .sort((a, b) => b.opening - a.opening);
 }
 
 export function mapCustomerMasterOverview(raw) {
@@ -48,15 +66,33 @@ export function mapCustomerMasterOverview(raw) {
 
   return {
     kpis: {
-      totalCustomers: mapKpiItem(kpi.Total_Customers),
-      withBankAccount: mapKpiItem(kpi.With_Bank_Account),
-      gstinRegistered: mapKpiItem(kpi.GSTIN_Registered),
-      statesCovered: mapKpiItem(kpi.States_Covered),
+      totalCustomers: mapKpiItem(kpi.Total_Customers, {
+        label: "FI CUSTOMERS",
+        bgColor: "#E8F1FF",
+        textColor: "#1D4ED8",
+      }),
+
+      withBankAccount: mapKpiItem(kpi.With_Bank_Account, {
+        label: extractPercent(kpi.With_Bank_Account?.Subtitle, "COVERAGE"),
+        bgColor: "#E8F5E9",
+        textColor: "#43A047",
+      }),
+
+      gstinRegistered: mapKpiItem(kpi.GSTIN_Registered, {
+        label: extractPercent(kpi.GSTIN_Registered?.Subtitle, "COMPLIANT"),
+        bgColor: "#FFF3E0",
+        textColor: "#FB8C00",
+      }),
+
+      statesCovered: mapKpiItem(kpi.States_Covered, {
+        label: `${kpi.States_Covered?.Title || "-"} REGIONS`,
+        bgColor: "#F3E5F5",
+        textColor: "#8E24AA",
+      }),
     },
 
     customersByRegion: toRegionBarWithLineData(
       charts["Customers by State / Region"],
-      charts["Bank Coverage by State"],
     ),
     tdsBreakdown: toChartData(charts["TDS / WHT Category Breakdown"]),
     bankCoverage: toChartData(charts["Bank Account Coverage"]),

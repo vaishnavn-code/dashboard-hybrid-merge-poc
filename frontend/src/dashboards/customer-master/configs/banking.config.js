@@ -10,11 +10,7 @@ export const bankingConfig = {
       iconName: "storage",
       accent: "c1",
       sparkPct: 65,
-      badge: {
-        label: "With Bank",
-        bgColor: "#E8F1FF",
-        textColor: "#1D4ED8",
-      },
+      badgePath: "kpis.withBankAccount.badge",
     },
     {
       label: "Without Bank Account",
@@ -24,11 +20,7 @@ export const bankingConfig = {
       iconName: "document",
       accent: "c2",
       sparkPct: 35,
-      badge: {
-        label: "Pending",
-        bgColor: "#FFF3E0",
-        textColor: "#FB8C00",
-      },
+      badgePath: "kpis.withoutBankAccount.badge",
     },
     {
       label: "Unique Banks",
@@ -38,25 +30,17 @@ export const bankingConfig = {
       iconName: "personFolder",
       accent: "c3",
       sparkPct: 70,
-      badge: {
-        label: "Banks",
-        bgColor: "#E0F7FA",
-        textColor: "#00ACC1",
-      },
+      badgePath: "kpis.uniqueBanks.badge",
     },
     {
-      label: "Bank Coverage Percent",
+      label: "Bank Coverage %",
       valuePath: "kpis.bankCoveragePercent.title",
       subPath: "kpis.bankCoveragePercent.subtitle",
       footerPath: "kpis.bankCoveragePercent.footer",
       iconName: "graph",
       accent: "c4",
       sparkPct: 65,
-      badge: {
-        label: "Coverage",
-        bgColor: "#E8F5E9",
-        textColor: "#43A047",
-      },
+      badgePath: "kpis.bankCoveragePercent.badge",
     },
   ],
 
@@ -67,6 +51,9 @@ export const bankingConfig = {
       title: "Bank Coverage by Region",
       subtitle: "CUSTOMERS WITH BANK DETAILS BY REGION",
       dataPath: "bankCoverageByRegion",
+      slantLabels: true,
+      limitOptions: [5, 10, 15, 20],
+      defaultLimit: 10,
     },
     {
       section: "twoCol",
@@ -74,6 +61,9 @@ export const bankingConfig = {
       title: "Top Banks by Customer Count",
       subtitle: "BANK-WISE CUSTOMER DISTRIBUTION",
       dataPath: "topBanksByCustomerCount",
+      slantLabels: true,
+      limitOptions: [5, 10, 15, 20],
+      defaultLimit: 10,
     },
   ],
 

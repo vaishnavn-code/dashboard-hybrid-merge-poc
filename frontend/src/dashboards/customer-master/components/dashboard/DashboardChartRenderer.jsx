@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { getByPath } from "../../utils/getByPath";
 import DonutChart from "../charts/DonutChart";
 import DonutLegend from "../charts/DonutLegend";
@@ -16,7 +16,17 @@ export default function DashboardChartRenderer({ chart, data }) {
     chart.controls?.defaultValue || null,
   );
 
-  const chartData = getByPath(data, chart.dataPath, []);
+  const [limit, setLimit] = useState(chart.defaultLimit || null);
+
+  const rawChartData = getByPath(data, chart.dataPath, []);
+
+  const chartData = useMemo(() => {
+    if (!Array.isArray(rawChartData)) return [];
+
+    if (!limit) return rawChartData;
+
+    return rawChartData.slice(0, Number(limit));
+  }, [rawChartData, limit]);
 
   return (
     <div className="chart-card">
@@ -28,31 +38,49 @@ export default function DashboardChartRenderer({ chart, data }) {
           )}
         </div>
 
-        {chart.controls && (
-          <div className="chart-controls">
-            {chart.controls.badge && (
-              <span className="chart-badge">{chart.controls.badge}</span>
-            )}
-
-            <div className="chart-toggle">
-              {chart.controls.options.map((option) => (
-                <button
-                  key={option}
-                  className={option === controlValue ? "active" : ""}
-                  onClick={() => setControlValue(option)}
-                >
-                  {option}
-                </button>
+        <div className="chart-controls">
+          {chart.limitOptions?.length > 0 && (
+            <select
+              className="chart-limit-select"
+              value={limit || ""}
+              onChange={(event) => setLimit(Number(event.target.value))}
+            >
+              {chart.limitOptions.map((option) => (
+                <option key={option} value={option}>
+                  Top {option}
+                </option>
               ))}
-            </div>
+            </select>
+          )}
 
-            {chart.controls.helperText && (
-              <span className="chart-helper-text">
-                {chart.controls.helperText}
-              </span>
-            )}
-          </div>
-        )}
+          {chart.controls && (
+            <>
+              {chart.controls.badge && (
+                <span className="chart-badge">{chart.controls.badge}</span>
+              )}
+
+              {chart.controls.options?.length > 0 && (
+                <div className="chart-toggle">
+                  {chart.controls.options.map((option) => (
+                    <button
+                      key={option}
+                      className={option === controlValue ? "active" : ""}
+                      onClick={() => setControlValue(option)}
+                    >
+                      {option}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {chart.controls.helperText && (
+                <span className="chart-helper-text">
+                  {chart.controls.helperText}
+                </span>
+              )}
+            </>
+          )}
+        </div>
       </div>
 
       {chart.type === "horizontalBar" && <HorizontalBar data={chartData} />}
@@ -60,7 +88,7 @@ export default function DashboardChartRenderer({ chart, data }) {
       {chart.type === "groupedBar" && (
         <GroupedBar
           data={chartData}
-          series={chart.series} // THIS WAS MISSING
+          series={chart.series}
           nameKey="name"
           height={320}
         />
@@ -102,16 +130,18 @@ export default function DashboardChartRenderer({ chart, data }) {
           barSize={36}
           axis={chart.axis}
           slantLabels={chart.slantLabels}
-          formatter={(v) => Number(v || 0).toLocaleString("en-IN")}
+          formatter={(value) => Number(value || 0).toLocaleString("en-IN")}
         />
       )}
 
       {chart.type === "verticalBarWithLine" && (
         <VerticalBarWithLineOverview
           data={chartData}
-          height={320}
+          height={460}
           viewMode={controlValue?.toLowerCase() || "monthly"}
           axis={chart.axis}
+          barSize={chart.barSize}
+          slantLabels={chart.slantLabels}
         />
       )}
     </div>

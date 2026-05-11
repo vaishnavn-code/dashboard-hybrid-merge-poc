@@ -416,13 +416,20 @@ const formatDate = (value, viewMode) => {
   return value;
 };
 
-export function VerticalBarWithLineOverview({ data, height = 320, viewMode }) {
+export function VerticalBarWithLineOverview({
+  data,
+  height = 320,
+  viewMode,
+  axis,
+  barSize = 36,
+  slantLabels = false,
+}) {
   return (
     <ResponsiveContainer width="100%" height={height}>
       <ComposedChart
         data={data}
         margin={{ top: 22, right: 16, left: 8, bottom: 2 }}
-        barCategoryGap="20%"
+        barCategoryGap="2%"
         barGap={2}
       >
         <defs>
@@ -443,6 +450,11 @@ export function VerticalBarWithLineOverview({ data, height = 320, viewMode }) {
             <stop offset="0%" stopColor="rgba(0,172,193,0.30)" />
             <stop offset="100%" stopColor="rgba(0,172,193,0.05)" />
           </linearGradient>
+
+          <linearGradient id="shareAreaGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="rgba(144, 202, 249, 0.35)" />
+            <stop offset="100%" stopColor="rgba(144, 202, 249, 0.04)" />
+          </linearGradient>
         </defs>
 
         <CartesianGrid
@@ -456,8 +468,42 @@ export function VerticalBarWithLineOverview({ data, height = 320, viewMode }) {
           dataKey="name"
           axisLine={false}
           tickLine={false}
-          tick={{ fontSize: 10, fill: "#6a9cbf", fontFamily: "Inter" }}
-          tickFormatter={(value) => formatDate(value, viewMode)}
+          height={60}
+          interval={0}
+          tick={({ x, y, payload }) => {
+            const value = String(payload.value || "");
+            const displayValue =
+              value.length > 18 ? value.slice(0, 18) + "..." : value;
+
+            if (slantLabels) {
+              return (
+                <text
+                  x={x}
+                  y={y + 14}
+                  textAnchor="end"
+                  fill="#6a9cbf"
+                  fontSize={10}
+                  fontFamily="Inter"
+                  transform={`rotate(-25, ${x}, ${y})`}
+                >
+                  {displayValue}
+                </text>
+              );
+            }
+
+            return (
+              <text
+                x={x}
+                y={y + 14}
+                textAnchor="middle"
+                fill="#6a9cbf"
+                fontSize={10}
+                fontFamily="Inter"
+              >
+                {displayValue}
+              </text>
+            );
+          }}
         />
 
         {/* LEFT AXIS → Opening + Closing Balance */}
@@ -466,14 +512,13 @@ export function VerticalBarWithLineOverview({ data, height = 320, viewMode }) {
           tick={{ fontSize: 10, fill: "#6a9cbf" }}
           axisLine={false}
           tickLine={false}
-          tickFormatter={(v) =>
-            Math.round(v / 10000000).toLocaleString("en-IN")
-          }
+          allowDecimals={false}
+          tickFormatter={(v) => Number(v || 0).toLocaleString("en-IN")}
           label={{
-            value: "Opening / Closing Balance (₹ Cr)",
+            value: axis?.yLeftLabel || "Count",
             angle: -90,
             dx: -9,
-            dy: 35,
+            dy: 20,
             position: "insideLeft",
             style: {
               fontSize: 9,
@@ -489,9 +534,10 @@ export function VerticalBarWithLineOverview({ data, height = 320, viewMode }) {
           tick={{ fontSize: 10, fill: "#6a9cbf" }}
           axisLine={false}
           tickLine={false}
-          tickFormatter={(v) => `${Number(v).toFixed(1)}%`}
+          domain={[0, "dataMax + 5"]}
+          tickFormatter={(v) => `${Number(v || 0).toFixed(0)}%`}
           label={{
-            value: "Avg EIR Rate (%)",
+            value: axis?.yRightLabel || "Share %",
             angle: 90,
             position: "insideRight",
             style: {
@@ -506,11 +552,11 @@ export function VerticalBarWithLineOverview({ data, height = 320, viewMode }) {
           cursor={{ fill: "transparent" }}
           content={buildUnifiedTooltip({
             valueFormatter: (value, _name, entry) => {
-              if (entry.dataKey === "eir") {
-                return `${Number(value).toFixed(2)} %`;
+              if (entry?.dataKey === "eir") {
+                return `${Number(value || 0).toFixed(2)}%`;
               }
 
-              return fmt.cr(value);
+              return Number(value || 0).toLocaleString("en-IN");
             },
           })}
         />
@@ -519,10 +565,10 @@ export function VerticalBarWithLineOverview({ data, height = 320, viewMode }) {
         <Bar
           yAxisId="left"
           dataKey="opening"
-          name="Opening Balance (₹ Cr)"
+          name="Customer Count"
           fill="url(#openingGrad)"
           radius={[5, 5, 0, 0]}
-          // maxBarSize={36}
+          maxBarSize={barSize}
         />
 
         {/* CLOSING BALANCE BAR */}
@@ -535,16 +581,17 @@ export function VerticalBarWithLineOverview({ data, height = 320, viewMode }) {
           // maxBarSize={36}
         />
 
-        {/* <Area
+        <Area
           yAxisId="right"
           type="monotone"
           dataKey="eir"
-          fill="url(#closingAreaGrad)"
+          name="Share % Area"
+          fill="url(#shareAreaGrad)"
           stroke="none"
-          tooltipType="none"
           fillOpacity={1}
+          tooltipType="none"
           isAnimationActive={false}
-        /> */}
+        />
 
         {/* AVG EIR LINE */}
         <Line
@@ -1506,7 +1553,8 @@ export function MaturityClosingTrendChart({ data = [], height = 360 }) {
           dataKey="lt1"
           stackId="a"
           name="< 1 Year"
-  fill="#42A5F5"        />
+          fill="#42A5F5"
+        />
 
         <Bar
           yAxisId="left"
@@ -1529,8 +1577,8 @@ export function MaturityClosingTrendChart({ data = [], height = 360 }) {
           dataKey="gt5"
           stackId="a"
           name="> 5 Years"
-  fill="#42A5F5"
-            radius={[4, 4, 0, 0]}
+          fill="#42A5F5"
+          radius={[4, 4, 0, 0]}
         />
 
         <Bar

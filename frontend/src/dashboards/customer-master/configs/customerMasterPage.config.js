@@ -10,11 +10,7 @@ export const customerMasterPageConfig = {
       iconName: "personFolder",
       accent: "c1",
       sparkPct: 100,
-      badge: {
-        label: "Duplicates",
-        bgColor: "#E8F1FF",
-        textColor: "#1D4ED8",
-      },
+      badgePath: "kpis.totalDuplicateBps.badge",
     },
     {
       label: "Duplicate PAN Groups",
@@ -24,25 +20,17 @@ export const customerMasterPageConfig = {
       iconName: "document",
       accent: "c2",
       sparkPct: 60,
-      badge: {
-        label: "PAN",
-        bgColor: "#E0F7FA",
-        textColor: "#00ACC1",
-      },
+      badgePath: "kpis.duplicatePanGroups.badge",
     },
     {
       label: "Duplicate GSTIN Groups",
       valuePath: "kpis.duplicateGstinGroups.title",
       subPath: "kpis.duplicateGstinGroups.subtitle",
       footerPath: "kpis.duplicateGstinGroups.footer",
-      iconName: "storage",
+      iconName: "SecurityIcon",
       accent: "c3",
       sparkPct: 80,
-      badge: {
-        label: "GSTIN",
-        bgColor: "#E8F5E9",
-        textColor: "#43A047",
-      },
+      badgePath: "kpis.duplicateGstinGroups.badge",
     },
     {
       label: "Duplicate Bank Accounts",
@@ -52,11 +40,7 @@ export const customerMasterPageConfig = {
       iconName: "graph",
       accent: "c4",
       sparkPct: 65,
-      badge: {
-        label: "Bank",
-        bgColor: "#FFF3E0",
-        textColor: "#FB8C00",
-      },
+      badgePath: "kpis.duplicateBankAccounts.badge",
     },
   ],
 
