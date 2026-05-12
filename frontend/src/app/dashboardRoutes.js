@@ -4,6 +4,7 @@ import NiExposureDashboard from "../dashboards/ni-exposure";
 import UserDashboard from "../dashboards/user-dashboard";
 import CustomerMasterDashboard from "../dashboards/customer-master";
 import VendorMasterDashboard from "../dashboards/vendor-master";
+import GlMasterDashboard from "../dashboards/gl-master";
 
 export const DASHBOARD_ROUTES = {
   base: {
@@ -40,5 +41,10 @@ export const DASHBOARD_ROUTES = {
     title: "Vendor Master Dashboard",
     type: "config-driven",
     component: VendorMasterDashboard,
+  },
+  "gl-master": {
+    title: "GL Master Dashboard",
+    type: "config-driven",
+    component: GlMasterDashboard,
   },
 };

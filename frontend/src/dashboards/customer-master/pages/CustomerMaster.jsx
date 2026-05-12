@@ -4,6 +4,8 @@ import { mapCustomerMasterPage } from "../mappers/customerMasterPageMapper";
 import KpiCard from "../components/ui/KpiCard";
 import { getByPath } from "../utils/getByPath";
 
+const PAGE_SIZE = 15;
+
 function DuplicateGroupCard({ section, groups }) {
   const totalCustomers = groups.reduce(
     (sum, group) => sum + Number(group.count || 0),
@@ -70,6 +72,8 @@ export default function CustomerMaster({ data }) {
   const [searchText, setSearchText] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("ALL");
   const [selectedWht, setSelectedWht] = useState("ALL");
+  const [currentPage, setCurrentPage] = useState(1);
+
   const mappedData = mapCustomerMasterPage(data);
   const summary = mappedData.summary || {};
 
@@ -127,10 +131,20 @@ export default function CustomerMaster({ data }) {
     });
   }, [tableRows, searchText, selectedRegion, selectedWht]);
 
+  const totalPages = Math.max(1, Math.ceil(filteredRows.length / PAGE_SIZE));
+
+  const paginatedRows = useMemo(() => {
+    const safePage = Math.min(currentPage, totalPages);
+    const start = (safePage - 1) * PAGE_SIZE;
+
+    return filteredRows.slice(start, start + PAGE_SIZE);
+  }, [filteredRows, currentPage, totalPages]);
+
   const clearFilters = () => {
     setSearchText("");
     setSelectedRegion("ALL");
     setSelectedWht("ALL");
+    setCurrentPage(1);
   };
 
   return (
@@ -213,14 +227,20 @@ export default function CustomerMaster({ data }) {
           <input
             className="customer-table-search"
             value={searchText}
-            onChange={(event) => setSearchText(event.target.value)}
+            onChange={(event) => {
+              setSearchText(event.target.value);
+              setCurrentPage(1);
+            }}
             placeholder="Search BP, Name, City..."
           />
 
           <select
             className="customer-table-select"
             value={selectedRegion}
-            onChange={(event) => setSelectedRegion(event.target.value)}
+            onChange={(event) => {
+              setSelectedRegion(event.target.value);
+              setCurrentPage(1);
+            }}
           >
             <option value="ALL">All Regions</option>
             {regionOptions.map((region) => (
@@ -233,7 +253,10 @@ export default function CustomerMaster({ data }) {
           <select
             className="customer-table-select customer-table-select-wide"
             value={selectedWht}
-            onChange={(event) => setSelectedWht(event.target.value)}
+            onChange={(event) => {
+              setSelectedWht(event.target.value);
+              setCurrentPage(1);
+            }}
           >
             <option value="ALL">All WHT Types</option>
             {whtOptions.map((wht) => (
@@ -251,6 +274,7 @@ export default function CustomerMaster({ data }) {
             Clear Filters
           </button>
         </div>
+
         <div className="chart-header">
           <div>
             <div className="chart-title">
@@ -273,7 +297,7 @@ export default function CustomerMaster({ data }) {
             </thead>
 
             <tbody>
-              {filteredRows.map((row, index) => (
+              {paginatedRows.map((row, index) => (
                 <tr key={`${row.bp_no || "row"}-${index}`}>
                   {columns.map((column) => {
                     const cellValue =
@@ -359,13 +383,60 @@ export default function CustomerMaster({ data }) {
                   })}
                 </tr>
               ))}
+
+              {paginatedRows.length === 0 && (
+                <tr>
+                  <td
+                    colSpan={columns.length}
+                    style={{
+                      textAlign: "center",
+                      color: "var(--text-muted)",
+                      padding: 20,
+                    }}
+                  >
+                    No matching customer master records available.
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
 
-        {filteredRows.length === 0 && (
-          <div style={{ padding: "20px", color: "#6a7280" }}>
-            No matching customer master records available.
+        {filteredRows.length > 0 && (
+          <div className="table-pagination">
+            <div className="table-pagination-info">
+              Showing {(currentPage - 1) * PAGE_SIZE + 1}-
+              {Math.min(currentPage * PAGE_SIZE, filteredRows.length)} of{" "}
+              {filteredRows.length} records
+            </div>
+
+            <div className="table-pagination-actions">
+              <button
+                type="button"
+                className="table-pagination-btn"
+                disabled={currentPage === 1}
+                onClick={() =>
+                  setCurrentPage((page) => Math.max(1, page - 1))
+                }
+              >
+                Prev
+              </button>
+
+              <span className="table-pagination-page">
+                Page {currentPage} of {totalPages}
+              </span>
+
+              <button
+                type="button"
+                className="table-pagination-btn"
+                disabled={currentPage === totalPages}
+                onClick={() =>
+                  setCurrentPage((page) => Math.min(totalPages, page + 1))
+                }
+              >
+                Next
+              </button>
+            </div>
           </div>
         )}
       </div>
