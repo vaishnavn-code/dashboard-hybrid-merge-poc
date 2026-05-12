@@ -9,7 +9,6 @@ import "./styles/index.css";
 import Banking from "./pages/Banking";
 import TaxCompliance from "./pages/TaxCompliance";
 import Geographic from "./pages/Geographic";
-import { vendorMasterResponse } from "./data/vendorMaster";
 
 const PAGE_TITLES = {
   overview: "Overview",
@@ -29,7 +28,6 @@ export default function VendorMasterApp() {
 
   // IMPORTANT:
   // If API data is not available yet, use local vendor response.
-  const dashboardData = data || vendorMasterResponse;
 
   const toggleDark = () => {
     const next = !darkMode;
@@ -40,22 +38,22 @@ export default function VendorMasterApp() {
   const renderPage = () => {
     switch (page) {
       case "overview":
-        return <Overview data={dashboardData} />;
+        return <Overview data={data} />;
 
       case "vendorMaster":
-        return <VendorMaster data={dashboardData} />;
+        return <VendorMaster data={data} />;
 
       case "banking":
-        return <Banking data={dashboardData} />;
+        return <Banking data={data} />;
 
       case "taxCompliance":
-        return <TaxCompliance data={dashboardData} />;
+        return <TaxCompliance data={data} />;
 
       case "geographic":
-        return <Geographic data={dashboardData} />;
+        return <Geographic data={data} />;
 
       default:
-        return <Overview data={dashboardData} />;
+        return <Overview data={data} />;
     }
   };
 

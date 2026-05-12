@@ -6,7 +6,6 @@ import AccountType from "./pages/AccountType";
 import AccountRange from "./pages/AccountRange";
 import GlAccounts from "./pages/GlAccounts";
 import { useDashboardData } from "./hooks/useDashboardData";
-import { glMasterResponse } from "./data/glMasterResponse";
 import "./styles/index.css";
 
 const PAGE_TITLES = {
@@ -24,8 +23,6 @@ export default function GlMasterApp() {
 
   const { data, loading, error } = useDashboardData();
 
-  const dashboardData = data || glMasterResponse;
-
   const toggleDark = () => {
     const next = !darkMode;
     setDark(next);
@@ -35,19 +32,19 @@ export default function GlMasterApp() {
   const renderPage = () => {
     switch (page) {
       case "overview":
-        return <Overview data={dashboardData} />;
+        return <Overview data={data} />;
 
       case "accountType":
-        return <AccountType data={dashboardData} />;
+        return <AccountType data={data} />;
 
       case "accountRange":
-        return <AccountRange data={dashboardData} />;
+        return <AccountRange data={data} />;
 
       case "glAccounts":
-        return <GlAccounts data={dashboardData} />;
+        return <GlAccounts data={data} />;
 
       default:
-        return <Overview data={dashboardData} />;
+        return <Overview data={data} />;
     }
   };
 

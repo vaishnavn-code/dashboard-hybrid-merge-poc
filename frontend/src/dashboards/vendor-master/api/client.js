@@ -18,7 +18,7 @@ api.interceptors.response.use(
       "API error";
 
     return Promise.reject(new Error(msg));
-  }
+  },
 );
 
 export const dashboardApi = {
@@ -33,18 +33,16 @@ export const dashboardApi = {
     }
 
     return api.post(
-      "/data/query",
+      "/vendor-master/data/query",
       {
-        // IMPORTANT:
-        // If backend expects different query_type, change only this value.
-        query_type: "customer_master_dashboard",
+        query_type: "vendor_master_dashboard",
         session_id: sessionId,
       },
       {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      }
+      },
     );
   },
 };
