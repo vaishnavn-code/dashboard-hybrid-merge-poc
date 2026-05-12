@@ -3469,3 +3469,80 @@ header {
 .cm-badge-green::before {
   background: #2e7d32;
 }
+.main-area {
+  position: relative;
+}
+
+.dashboard-loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(248, 251, 255, 0.82);
+  backdrop-filter: blur(7px);
+}
+
+.dashboard-loader-card {
+  width: 330px;
+  padding: 34px 38px;
+  border-radius: 22px;
+  background: #ffffff;
+  border: 1px solid rgba(25, 118, 210, 0.18);
+  box-shadow: 0 24px 70px rgba(11, 46, 107, 0.28);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  opacity: 1;
+  visibility: visible;
+}
+
+.dashboard-loader-spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 5px solid rgba(25, 118, 210, 0.16);
+  border-top-color: #1976d2;
+  border-right-color: #0b2e6b;
+  animation: dashboardSpin 0.8s linear infinite;
+  opacity: 1;
+  visibility: visible;
+}
+
+.dashboard-loader-title {
+  font-size: 1rem;
+  font-weight: 900;
+  color: #0b2e6b;
+  letter-spacing: 0.02em;
+  opacity: 1;
+  visibility: visible;
+}
+
+.dashboard-loader-subtitle {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #6a7280;
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes dashboardSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dashboard-loader-overlay *,
+.dashboard-loader-card,
+.dashboard-loader-spinner {
+  opacity: 1 !important;
+  visibility: visible !important;
+}

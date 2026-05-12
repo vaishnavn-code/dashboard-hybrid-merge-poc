@@ -4,7 +4,6 @@ import Header from "./components/layout/Header";
 import Overview from "./pages/Overview";
 // import { customerMasterResponse } from "./data/customerMasterResponse";
 import { useDashboardData } from "./hooks/useDashboardData";
-import { Spinner, ErrorMsg } from "./components/ui/helpers";
 import CustomerMaster from "./pages/CustomerMaster";
 import "./styles/index.css";
 import Banking from "./pages/Banking";
@@ -69,6 +68,29 @@ export default function CustomerMasterApp() {
           setIsExportingFull={setIsExportingFull}
           setExportStatus={setExportStatus}
         />
+
+        {loading && (
+          <div className="dashboard-loader-overlay">
+            <div className="dashboard-loader-card">
+              <div className="dashboard-loader-spinner" />
+              <div className="dashboard-loader-title">Loading data</div>
+              <div className="dashboard-loader-subtitle">
+                Fetching customer dashboard insights...
+              </div>
+            </div>
+          </div>
+        )}
+
+        {error && !loading && (
+          <div className="dashboard-error-overlay">
+            <div className="dashboard-error-card">
+              <div className="dashboard-error-title">Unable to load data</div>
+              <div className="dashboard-error-subtitle">
+                {error?.message || "Please refresh and try again."}
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="page-content">{renderPage()}</div>
       </div>
