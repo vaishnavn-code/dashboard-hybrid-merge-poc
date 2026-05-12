@@ -89,13 +89,20 @@ export const customerMasterConfig = {
     },
     {
       section: "twoCol",
-      type: "verticalBar",
+      type: "stackedBar",
       title: "Bank Coverage by State",
-      subtitle: "WITH BANK CUSTOMERS BY STATE",
+      subtitle: "WITH BANK VS NO BANK BY STATE",
       dataPath: "bankCoverageByState",
+      xKey: "name",
+      series: [
+        { key: "withBank", name: "With Bank", color: "#1565c0" },
+        { key: "noBank", name: "No Bank", color: "#90caf9" },
+      ],
       slantLabels: true,
       limitOptions: [5, 10, 15, 20],
       defaultLimit: 10,
+      height: 320,
+      barSize: 34,
     },
     {
       section: "twoCol",

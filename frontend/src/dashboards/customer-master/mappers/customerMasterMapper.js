@@ -17,11 +17,36 @@ function toChartData(obj = {}) {
 
 function toBankCoverageByState(obj = {}) {
   return Object.entries(obj)
-    .map(([name, item]) => ({
-      name,
-      value: toNumber(item?.["With Bank"]),
-    }))
-    .sort((a, b) => b.value - a.value);
+    .map(([name, item]) => {
+      const withBank = toNumber(
+        item?.with_bank ??
+          item?.withBank ??
+          item?.["With Bank"] ??
+          item?.["with bank"],
+      );
+
+      const noBank = toNumber(
+        item?.no_bank ??
+          item?.noBank ??
+          item?.["No Bank"] ??
+          item?.["no bank"],
+      );
+
+      return {
+        name,
+        withBank,
+        noBank,
+
+        // keep value also, so old chart types don't break if reused
+        value: withBank,
+      };
+    })
+    .sort((a, b) => {
+      const totalA = a.withBank + a.noBank;
+      const totalB = b.withBank + b.noBank;
+
+      return totalB - totalA;
+    });
 }
 
 function mapKpiItem(item, badge = null) {
