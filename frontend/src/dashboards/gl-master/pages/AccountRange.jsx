@@ -10,10 +10,12 @@ import DashboardChartRenderer from "../components/dashboard/DashboardChartRender
 
 export default function AccountRange({ data }) {
   const rangeOptions = useMemo(() => getGlRangeOptions(data), [data]);
+  const PAGE_SIZE = 15;
 
   const [selectedRange, setSelectedRange] = useState(() =>
     getDefaultGlRange(data),
   );
+  const [currentPage, setCurrentPage] = useState(1);
 
   const mappedData = useMemo(
     () => mapGlAccountRange(data, selectedRange),
@@ -21,9 +23,18 @@ export default function AccountRange({ data }) {
   );
 
   const tableRows = mappedData.table || [];
+  const totalPages = Math.max(1, Math.ceil(tableRows.length / PAGE_SIZE));
+
+  const paginatedRows = useMemo(() => {
+    const safePage = Math.min(currentPage, totalPages);
+    const start = (safePage - 1) * PAGE_SIZE;
+
+    return tableRows.slice(start, start + PAGE_SIZE);
+  }, [tableRows, currentPage, totalPages]);
 
   const handleRangeChange = (event) => {
     setSelectedRange(event.target.value);
+    setCurrentPage(1);
   };
 
   return (
@@ -84,7 +95,7 @@ export default function AccountRange({ data }) {
             </thead>
 
             <tbody>
-              {tableRows.map((row, index) => (
+              {paginatedRows.map((row, index) => (
                 <tr key={`${row.gl_account}-${index}`}>
                   {glAccountRangeConfig.table.columns.map((column) => (
                     <td key={column.key}>
@@ -94,7 +105,7 @@ export default function AccountRange({ data }) {
                 </tr>
               ))}
 
-              {tableRows.length === 0 && (
+              {paginatedRows.length === 0 && (
                 <tr>
                   <td
                     colSpan={glAccountRangeConfig.table.columns.length}
@@ -111,6 +122,41 @@ export default function AccountRange({ data }) {
             </tbody>
           </table>
         </div>
+        {tableRows.length > 0 && (
+          <div className="table-pagination">
+            <div className="table-pagination-info">
+              Showing {(currentPage - 1) * PAGE_SIZE + 1}-
+              {Math.min(currentPage * PAGE_SIZE, tableRows.length)} of{" "}
+              {tableRows.length} records
+            </div>
+
+            <div className="table-pagination-actions">
+              <button
+                type="button"
+                className="table-pagination-btn"
+                disabled={currentPage === 1}
+                onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
+              >
+                Prev
+              </button>
+
+              <span className="table-pagination-page">
+                Page {currentPage} of {totalPages}
+              </span>
+
+              <button
+                type="button"
+                className="table-pagination-btn"
+                disabled={currentPage === totalPages}
+                onClick={() =>
+                  setCurrentPage((page) => Math.min(totalPages, page + 1))
+                }
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

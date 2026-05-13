@@ -15,6 +15,13 @@ const PAGE_TITLES = {
   glAccounts: "GL Accounts",
 };
 
+const EXPORT_PAGES = [
+  { key: "overview", title: "Overview" },
+  { key: "accountType", title: "Account Type" },
+  { key: "accountRange", title: "Account Range" },
+  { key: "glAccounts", title: "GL Accounts" },
+];
+
 export default function GlMasterApp() {
   const [isExportingFull, setIsExportingFull] = useState(false);
   const [exportStatus, setExportStatus] = useState("");
@@ -61,6 +68,7 @@ export default function GlMasterApp() {
           setActivePage={setPage}
           setIsExportingFull={setIsExportingFull}
           setExportStatus={setExportStatus}
+          exportPages={EXPORT_PAGES}
         />
 
         {loading && (
@@ -70,6 +78,24 @@ export default function GlMasterApp() {
               <div className="dashboard-loader-title">Loading data</div>
               <div className="dashboard-loader-subtitle">
                 Fetching GL master dashboard insights...
+              </div>
+            </div>
+          </div>
+        )}
+
+        {isExportingFull && (
+          <div className="export-overlay" id="export-overlay">
+            <div className="export-overlay-card">
+              <div className="export-overlay-spinner" />
+
+              <div className="export-overlay-title">Exporting PDF</div>
+
+              <div className="export-overlay-subtitle">
+                {exportStatus || "Preparing report..."}
+              </div>
+
+              <div className="export-overlay-note">
+                Please wait while we capture all dashboard pages.
               </div>
             </div>
           </div>
