@@ -151,6 +151,39 @@ export default function TaxCompliance({ data }) {
     return filteredRows.slice(start, start + PAGE_SIZE);
   }, [filteredRows, currentPage, totalPages]);
 
+  const gstinColorMap = useMemo(() => {
+    const counts = {};
+    const colors = [
+      "tax-badge-blue",
+      "tax-badge-green",
+      "tax-badge-purple",
+      "tax-badge-orange",
+      "tax-badge-teal",
+      "tax-badge-pink",
+      "tax-badge-indigo",
+    ];
+
+    filteredRows.forEach((row) => {
+      const gstin = row.gstin;
+
+      if (gstin && gstin !== "--") {
+        counts[gstin] = (counts[gstin] || 0) + 1;
+      }
+    });
+
+    const colorMap = {};
+    let colorIndex = 0;
+
+    Object.entries(counts).forEach(([gstin, count]) => {
+      if (count >= 3) {
+        colorMap[gstin] = colors[colorIndex % colors.length];
+        colorIndex += 1;
+      }
+    });
+
+    return colorMap;
+  }, [filteredRows]);
+
   const clearFilters = () => {
     setSearchText("");
     setSelectedWht("ALL");
@@ -297,9 +330,17 @@ export default function TaxCompliance({ data }) {
                     }
 
                     if (column.key === "gstin") {
+                      const hasGstinValue = cellValue !== "--";
+
+                      const gstinClass = hasGstinValue
+                        ? gstinColorMap[cellValue] || "tax-badge-grey"
+                        : "tax-badge-grey";
+
                       return (
                         <td key={column.key}>
-                          <span className="tax-table-badge tax-badge-red">
+                          <span
+                            className={`tax-table-badge tax-gstin-badge ${gstinClass}`}
+                          >
                             {cellValue}
                           </span>
                         </td>

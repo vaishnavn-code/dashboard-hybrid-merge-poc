@@ -3635,6 +3635,21 @@ header {
   line-height: 1.45;
 }
 
+.tax-gstin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tax-gstin-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
 @keyframes exportOverlaySpin {
   to {
     transform: rotate(360deg);

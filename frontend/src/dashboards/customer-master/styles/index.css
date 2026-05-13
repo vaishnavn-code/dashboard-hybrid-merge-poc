@@ -3630,3 +3630,51 @@ header {
   opacity: 1 !important;
   visibility: visible !important;
 }
+.tax-badge-blue {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.tax-badge-green {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.tax-badge-purple {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.tax-badge-orange {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.tax-badge-teal {
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+.tax-badge-pink {
+  background: #fce7f3;
+  color: #be185d;
+}
+
+.tax-badge-indigo {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+.tax-gstin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tax-gstin-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: currentColor;
+  flex-shrink: 0;
+}
