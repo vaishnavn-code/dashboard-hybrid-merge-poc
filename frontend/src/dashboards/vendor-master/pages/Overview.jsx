@@ -4,6 +4,7 @@ import { mapVendorMasterOverview } from "../mappers/vendorMasterOverviewMapper";
 import KpiCard from "../components/ui/KpiCard";
 import DashboardChartRenderer from "../components/dashboard/DashboardChartRenderer";
 import { getByPath } from "../utils/getByPath";
+import { useInsights } from "../hooks/useDashboardData";
 
 function toNumber(value) {
   const cleaned = String(value ?? "")
@@ -183,33 +184,20 @@ function buildOverviewInsights(mappedData) {
   };
 }
 
-function GenAiInsightsPanel({ mappedData }) {
-  const [insights, setInsights] = useState(null);
-  const [aiLoading, setAiLoading] = useState(false);
-  const [aiError, setAiError] = useState("");
+function GenAiInsightsPanel() {
+  const {
+    insights,
+    loading: insightsLoading,
+    error: insightsError,
+    generate,
+    hasGenerated,
+  } = useInsights();
 
-  const hasGenerated = Boolean(insights);
   const insightItems = insights?.insights || [];
   const insightSummary = insights?.summary || "";
   const insightCount = insights?.count || insightItems.length || 0;
   const insightModel = insights?.model || "Vendor Analytics";
   const ragEnabled = Boolean(insights?.ragEnabled);
-
-  const generate = () => {
-    try {
-      setAiLoading(true);
-      setAiError("");
-
-      setTimeout(() => {
-        const result = buildOverviewInsights(mappedData);
-        setInsights(result);
-        setAiLoading(false);
-      }, 500);
-    } catch (error) {
-      setAiError(error.message || "Failed to generate insights.");
-      setAiLoading(false);
-    }
-  };
 
   return (
     <>
@@ -232,9 +220,9 @@ function GenAiInsightsPanel({ mappedData }) {
           <button
             className="insights-btn"
             onClick={generate}
-            disabled={aiLoading}
+            disabled={insightsLoading}
           >
-            {aiLoading
+            {insightsLoading
               ? "Analysing..."
               : hasGenerated
                 ? "✦ Regenerate Insights"
@@ -243,24 +231,25 @@ function GenAiInsightsPanel({ mappedData }) {
         </div>
 
         <div className="ai-panel-body">
-          {aiLoading && (
+          {insightsLoading && (
             <div className="ai-loading show">
               <div className="ai-loading-dots">
                 <span className="ai-loading-dot"></span>
                 <span className="ai-loading-dot"></span>
                 <span className="ai-loading-dot"></span>
               </div>
+
               <div className="ai-loading-text">
                 Generating vendor master insights...
               </div>
             </div>
           )}
 
-          {!aiLoading && aiError && (
-            <div className="ai-error show">{aiError}</div>
+          {!insightsLoading && insightsError && (
+            <div className="ai-error show">{insightsError}</div>
           )}
 
-          {!aiLoading && !aiError && insightItems.length > 0 && (
+          {!insightsLoading && !insightsError && insightItems.length > 0 && (
             <div className="ai-result show">
               <div className="ai-summary-hero">
                 <div className="ai-summary-label">Executive Summary</div>
@@ -351,7 +340,7 @@ function GenAiInsightsPanel({ mappedData }) {
             </div>
           )}
 
-          {!insights && !aiLoading && !aiError && (
+          {!insights && !insightsLoading && !insightsError && (
             <div className="ai-empty-state">
               Click the button above to generate AI-powered vendor master
               insights.
@@ -412,7 +401,7 @@ export default function Overview({ data }) {
         ))}
       </div>
 
-      <GenAiInsightsPanel mappedData={mappedData} />
+      <GenAiInsightsPanel />
 
       <div className="two-col" style={{ marginTop: "20px" }}>
         {chartRow3.map((chart) => (

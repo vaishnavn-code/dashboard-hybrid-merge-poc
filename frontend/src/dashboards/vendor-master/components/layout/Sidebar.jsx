@@ -119,11 +119,6 @@ export default function Sidebar({ activePage, onNavigate }) {
         ))}
       </nav>
 
-      <div style={styles.sidebarFooter}>
-        <div style={styles.footerPill}>● LIVE</div>
-        <div style={styles.footerText}>Vendor Master</div>
-      </div>
-
       <style>{"@keyframes spin { to { transform: rotate(360deg); } }"}</style>
     </aside>
   );

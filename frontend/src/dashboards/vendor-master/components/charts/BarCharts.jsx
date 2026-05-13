@@ -1021,69 +1021,66 @@ export function StackedBarWithLine({ data, height = 360 }) {
 }
 
 export function StackedBarOnly({
-  data,
-  height = 360,
+  data = [],
+  height = 320,
   xKey = "name",
-  series = [
-    { key: "withBank", name: "With Bank", color: "#1565c0" },
-    { key: "noBank", name: "No Bank", color: "#90caf9" },
-  ],
+  series = [],
   barSize = 34,
 }) {
   return (
     <ResponsiveContainer width="100%" height={height}>
-      <ComposedChart
+      <BarChart
         data={data}
-        margin={{ top: 20, right: 20, left: 10, bottom: 20 }}
-        barCategoryGap="25%"
+        margin={{ top: 24, right: 20, left: 0, bottom: 28 }}
       >
-        <CartesianGrid
-          stroke="rgba(0,0,0,0.08)"
-          vertical={false}
-          horizontal={true}
-        />
+        <CartesianGrid strokeDasharray="3 3" vertical={false} />
 
         <XAxis
           dataKey={xKey}
-          tickLine={false}
+          tick={{ fontSize: 11, fill: "#5E93C5" }}
           axisLine={false}
+          tickLine={false}
           interval={0}
-          tick={{
-            fontSize: 10,
-            fill: "#6a9cbf",
-            fontFamily: "Inter",
-          }}
         />
 
         <YAxis
-          tickLine={false}
+          tick={{ fontSize: 11, fill: "#5E93C5" }}
           axisLine={false}
-          tick={{
-            fontSize: 10,
-            fill: "#6a9cbf",
-          }}
-          tickFormatter={(value) => Number(value || 0).toLocaleString("en-IN")}
+          tickLine={false}
         />
 
         <Tooltip
-          cursor={{ fill: "transparent" }}
-          content={buildUnifiedTooltip({
-            valueFormatter: (value) =>
-              Number(value || 0).toLocaleString("en-IN"),
-          })}
+          cursor={{ fill: "rgba(21, 101, 192, 0.06)" }}
+          formatter={(value, name) => [
+            Number(value || 0).toLocaleString("en-IN"),
+            name,
+          ]}
+        />
+
+        <Legend
+          verticalAlign="top"
+          align="center"
+          iconType="square"
+          iconSize={12}
+          wrapperStyle={{
+            top: 0,
+            fontSize: 12,
+            color: "#315f8d",
+          }}
         />
 
         {series.map((item) => (
           <Bar
             key={item.key}
             dataKey={item.key}
+            name={item.name}
             stackId="bankCoverage"
             fill={item.color}
-            name={item.name}
             barSize={barSize}
+            radius={[4, 4, 0, 0]}
           />
         ))}
-      </ComposedChart>
+      </BarChart>
     </ResponsiveContainer>
   );
 }
