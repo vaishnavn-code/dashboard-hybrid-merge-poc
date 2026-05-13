@@ -7,7 +7,9 @@ import { getByPath } from "../utils/getByPath";
 
 export default function Banking({ data }) {
   const mappedData = mapBankingPage(data);
+  const PAGE_SIZE = 15;
   const [searchText, setSearchText] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
   const tableRows =
     getByPath(mappedData, bankingConfig.table.dataPath, []) || [];
   const columns = bankingConfig.table.columns;
@@ -41,8 +43,18 @@ export default function Banking({ data }) {
     });
   }, [tableRows, searchText]);
 
+  const totalPages = Math.max(1, Math.ceil(filteredRows.length / PAGE_SIZE));
+
+  const paginatedRows = useMemo(() => {
+    const safePage = Math.min(currentPage, totalPages);
+    const start = (safePage - 1) * PAGE_SIZE;
+
+    return filteredRows.slice(start, start + PAGE_SIZE);
+  }, [filteredRows, currentPage, totalPages]);
+
   const clearSearch = () => {
     setSearchText("");
+    setCurrentPage(1);
   };
 
   return (
@@ -82,7 +94,10 @@ export default function Banking({ data }) {
           <input
             className="banking-table-search"
             value={searchText}
-            onChange={(event) => setSearchText(event.target.value)}
+            onChange={(event) => {
+              setSearchText(event.target.value);
+              setCurrentPage(1);
+            }}
             placeholder="Search customer or bank..."
           />
 
@@ -112,7 +127,7 @@ export default function Banking({ data }) {
             </thead>
 
             <tbody>
-              {filteredRows.map((row, index) => (
+              {paginatedRows.map((row, index) => (
                 <tr key={`${row.bp_no || "row"}-${index}`}>
                   {columns.map((column) => {
                     const cellValue =
@@ -155,11 +170,55 @@ export default function Banking({ data }) {
             </tbody>
           </table>
         </div>
+        {filteredRows.length > 0 && (
+          <div className="table-pagination">
+            <div className="table-pagination-info">
+              Showing {(currentPage - 1) * PAGE_SIZE + 1}-
+              {Math.min(currentPage * PAGE_SIZE, filteredRows.length)} of{" "}
+              {filteredRows.length} records
+            </div>
 
-        {filteredRows.length === 0 && (
-          <div style={{ padding: "20px", color: "#6a7280" }}>
-            No matching banking records available.
+            <div className="table-pagination-actions">
+              <button
+                type="button"
+                className="table-pagination-btn"
+                disabled={currentPage === 1}
+                onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
+              >
+                Prev
+              </button>
+
+              <span className="table-pagination-page">
+                Page {currentPage} of {totalPages}
+              </span>
+
+              <button
+                type="button"
+                className="table-pagination-btn"
+                disabled={currentPage === totalPages}
+                onClick={() =>
+                  setCurrentPage((page) => Math.min(totalPages, page + 1))
+                }
+              >
+                Next
+              </button>
+            </div>
           </div>
+        )}
+
+        {paginatedRows.length === 0 && (
+          <tr>
+            <td
+              colSpan={columns.length}
+              style={{
+                textAlign: "center",
+                color: "var(--text-muted)",
+                padding: 20,
+              }}
+            >
+              No matching banking records available.
+            </td>
+          </tr>
         )}
       </div>
     </div>

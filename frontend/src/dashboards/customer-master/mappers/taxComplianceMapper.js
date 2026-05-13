@@ -49,13 +49,75 @@ function normalizeBackendGroups(groups) {
   });
 }
 
+function isInvalidDuplicateValue(value) {
+  const normalized = String(value ?? "")
+    .trim()
+    .toUpperCase();
+
+  return (
+    !normalized ||
+    normalized === "-" ||
+    normalized === "--" ||
+    normalized === "NOTAVAILABLE" ||
+    normalized === "PANNUMBER" ||
+    normalized === "NOT REG." ||
+    normalized === "NOT REGISTERED"
+  );
+}
+
+function normalizeCustomerMasterTaxRow(row = {}) {
+  return {
+    bp_no: row.bp_no || "--",
+    customer_name: row.name || row.customer_name || "--",
+    pan_no: row.pan_no || "--",
+    gstin: row.gstin || "--",
+    tax_type: row.tax_type || "--",
+    wht_code: row.wht_code || "--",
+    wht_description: row.wht_category || row.wht_description || "Not Assigned",
+    recon_account: row.recon_acct || row.recon_account || "--",
+  };
+}
+
+function buildDuplicateGroupsFromCustomerMaster(table = [], key) {
+  const grouped = table.reduce((acc, row) => {
+    const value = String(row[key] ?? "").trim();
+
+    if (isInvalidDuplicateValue(value)) return acc;
+
+    if (!acc[value]) acc[value] = [];
+    acc[value].push(row);
+
+    return acc;
+  }, {});
+
+  return Object.entries(grouped)
+    .filter(([, rows]) => rows.length > 1)
+    .map(([groupKey, rows]) => ({
+      groupKey,
+      count: rows.length,
+      rows,
+    }));
+}
+
 export function mapTaxCompliancePage(raw) {
   const taxCompliance = raw?.tax_compliance ?? {};
   const kpi = taxCompliance?.kpi ?? {};
   const charts = taxCompliance?.charts ?? {};
   const tableRows = taxCompliance?.table ?? [];
 
-  const duplicateGroups = raw?.customer_master?.duplicate_groups ?? {};
+  const customerMasterRows = Array.isArray(raw?.customer_master?.table)
+    ? raw.customer_master.table.map(normalizeCustomerMasterTaxRow)
+    : [];
+
+  const duplicatePanGroups = buildDuplicateGroupsFromCustomerMaster(
+    customerMasterRows,
+    "pan_no",
+  );
+
+  const duplicateGstinGroups = buildDuplicateGroupsFromCustomerMaster(
+    customerMasterRows,
+    "gstin",
+  );
 
   return {
     kpis: {
@@ -92,17 +154,8 @@ export function mapTaxCompliancePage(raw) {
     gstRegistrationStatus: toChartData(charts["GST Registration Status"]),
 
     duplicates: {
-      pan: normalizeBackendGroups(
-        duplicateGroups.pan ||
-          duplicateGroups.pan_numbers ||
-          duplicateGroups.duplicate_pan_numbers,
-      ),
-
-      gstin: normalizeBackendGroups(
-        duplicateGroups.gstin ||
-          duplicateGroups.gstin_numbers ||
-          duplicateGroups.duplicate_gstin_numbers,
-      ),
+      pan: duplicatePanGroups,
+      gstin: duplicateGstinGroups,
     },
 
     table: tableRows,

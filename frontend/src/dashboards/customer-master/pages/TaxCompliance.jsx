@@ -95,8 +95,10 @@ function DuplicateGroupCard({ section, groups }) {
 
 export default function TaxCompliance({ data }) {
   const mappedData = mapTaxCompliancePage(data);
+  const PAGE_SIZE = 15;
 
   const [searchText, setSearchText] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
   const [selectedWht, setSelectedWht] = useState("ALL");
 
   const tableRows =
@@ -140,9 +142,19 @@ export default function TaxCompliance({ data }) {
     });
   }, [tableRows, searchText, selectedWht]);
 
+  const totalPages = Math.max(1, Math.ceil(filteredRows.length / PAGE_SIZE));
+
+  const paginatedRows = useMemo(() => {
+    const safePage = Math.min(currentPage, totalPages);
+    const start = (safePage - 1) * PAGE_SIZE;
+
+    return filteredRows.slice(start, start + PAGE_SIZE);
+  }, [filteredRows, currentPage, totalPages]);
+
   const clearFilters = () => {
     setSearchText("");
     setSelectedWht("ALL");
+    setCurrentPage(1);
   };
 
   return (
@@ -216,14 +228,20 @@ export default function TaxCompliance({ data }) {
           <input
             className="tax-table-search"
             value={searchText}
-            onChange={(event) => setSearchText(event.target.value)}
+            onChange={(event) => {
+              setSearchText(event.target.value);
+              setCurrentPage(1);
+            }}
             placeholder="Search customer or PAN..."
           />
 
           <select
             className="tax-table-select"
             value={selectedWht}
-            onChange={(event) => setSelectedWht(event.target.value)}
+            onChange={(event) => {
+              setSelectedWht(event.target.value);
+              setCurrentPage(1);
+            }}
           >
             <option value="ALL">All WHT Types</option>
             {whtOptions.map((wht) => (
@@ -262,7 +280,7 @@ export default function TaxCompliance({ data }) {
             </thead>
 
             <tbody>
-              {filteredRows.map((row, index) => (
+              {paginatedRows.map((row, index) => (
                 <tr key={`${row.bp_no || "row"}-${index}`}>
                   {columns.map((column) => {
                     const cellValue =
@@ -317,10 +335,55 @@ export default function TaxCompliance({ data }) {
           </table>
         </div>
 
-        {filteredRows.length === 0 && (
-          <div style={{ padding: "20px", color: "#6a7280" }}>
-            No matching tax compliance records available.
+        {filteredRows.length > 0 && (
+          <div className="table-pagination">
+            <div className="table-pagination-info">
+              Showing {(currentPage - 1) * PAGE_SIZE + 1}-
+              {Math.min(currentPage * PAGE_SIZE, filteredRows.length)} of{" "}
+              {filteredRows.length} records
+            </div>
+
+            <div className="table-pagination-actions">
+              <button
+                type="button"
+                className="table-pagination-btn"
+                disabled={currentPage === 1}
+                onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
+              >
+                Prev
+              </button>
+
+              <span className="table-pagination-page">
+                Page {currentPage} of {totalPages}
+              </span>
+
+              <button
+                type="button"
+                className="table-pagination-btn"
+                disabled={currentPage === totalPages}
+                onClick={() =>
+                  setCurrentPage((page) => Math.min(totalPages, page + 1))
+                }
+              >
+                Next
+              </button>
+            </div>
           </div>
+        )}
+
+        {paginatedRows.length === 0 && (
+          <tr>
+            <td
+              colSpan={columns.length}
+              style={{
+                textAlign: "center",
+                color: "var(--text-muted)",
+                padding: 20,
+              }}
+            >
+              No matching tax compliance records available.
+            </td>
+          </tr>
         )}
       </div>
     </div>

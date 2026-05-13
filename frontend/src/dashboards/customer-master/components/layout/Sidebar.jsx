@@ -61,7 +61,6 @@ export default function Sidebar({ activePage, onNavigate }) {
 
         <div>
           <div style={styles.logoText}>Customer Analytics</div>
-          <div style={styles.logoSub}>Customer Master Dashboard</div>
         </div>
       </div>
 
@@ -103,10 +102,10 @@ export default function Sidebar({ activePage, onNavigate }) {
         ))}
       </nav>
 
-      <div style={styles.sidebarFooter}>
+      {/* <div style={styles.sidebarFooter}>
         <div style={styles.footerPill}>● LIVE</div>
         <div style={styles.footerText}>Customer Master</div>
-      </div>
+      </div> */}
 
       <style>{"@keyframes spin { to { transform: rotate(360deg); } }"}</style>
     </aside>

@@ -388,6 +388,8 @@ export default function Overview({ data }) {
         ))}
       </div>
 
+      <GenAiInsightsPanel mappedData={mappedData} />
+
       <div className="two-col" style={{ marginTop: "20px" }}>
         {chartRow1.map((chart) => (
           <DashboardChartRenderer
@@ -407,9 +409,6 @@ export default function Overview({ data }) {
           />
         ))}
       </div>
-
-      <GenAiInsightsPanel mappedData={mappedData} />
-
       <div className="two-col" style={{ marginTop: "20px" }}>
         {chartRow3.map((chart) => (
           <DashboardChartRenderer

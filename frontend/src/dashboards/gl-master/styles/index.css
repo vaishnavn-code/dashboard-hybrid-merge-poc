@@ -2955,7 +2955,7 @@ header {
 
 .customer-table-search,
 .customer-table-select {
-  height: 38px;
+  height: 34px;
   border: 1px solid #c7dff6;
   background: rgba(255, 255, 255, 0.92);
   color: var(--blue-dark);
@@ -2982,9 +2982,6 @@ header {
   cursor: pointer;
 }
 
-.customer-table-select-wide {
-  min-width: 310px;
-}
 
 .customer-table-search:focus,
 .customer-table-select:focus {
@@ -3019,7 +3016,7 @@ header {
 }
 
 .banking-table-search {
-  height: 38px;
+  height: 34px;
   min-width: 270px;
   border: 1px solid #c7dff6;
   background: rgba(255, 255, 255, 0.94);
@@ -3043,7 +3040,7 @@ header {
 }
 
 .banking-table-clear-btn {
-  height: 38px;
+  height: 34x;
   border: 1px solid #90caf9;
   background: rgba(255, 255, 255, 0.94);
   color: var(--blue-dark);
@@ -3069,7 +3066,7 @@ header {
 
 .tax-table-search,
 .tax-table-select {
-  height: 38px;
+  height: 34px;
   border: 1px solid #c7dff6;
   background: rgba(255, 255, 255, 0.94);
   color: var(--blue-dark);
@@ -3087,7 +3084,7 @@ header {
 }
 
 .tax-table-select {
-  min-width: 310px;
+  /* min-width: 310px; */
   cursor: pointer;
 }
 
@@ -3103,7 +3100,7 @@ header {
 }
 
 .tax-table-clear-btn {
-  height: 38px;
+  height: 34px;
   border: 1px solid #90caf9;
   background: rgba(255, 255, 255, 0.94);
   color: var(--blue-dark);
@@ -3207,8 +3204,8 @@ header {
 }
 
 .geo-table-search {
-  height: 38px;
-  min-width: 270px;
+  height: 34px;
+  min-width: 204px;
   border: 1px solid #c7dff6;
   background: rgba(255, 255, 255, 0.94);
   color: var(--text);
@@ -3231,7 +3228,7 @@ header {
 }
 
 .geo-table-clear-btn {
-  height: 38px;
+  height: 34px;
   border: 1px solid #90caf9;
   background: rgba(255, 255, 255, 0.94);
   color: var(--blue-dark);
@@ -3249,7 +3246,7 @@ header {
 }
 .geo-state-value {
   color: #102b4e;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .geo-badge {
