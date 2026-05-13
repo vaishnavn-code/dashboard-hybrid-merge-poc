@@ -1090,11 +1090,6 @@ body::before {
         font-weight: 500;
       }
 
-      .ai-error.show,
-      .ai-loading.show {
-        display: block;
-      }
-
       .ai-error,
       .ai-loading {
         display: none;

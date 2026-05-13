@@ -107,12 +107,6 @@ export default function Sidebar({ activePage, onNavigate }) {
           </div>
         ))}
       </nav>
-
-      <div style={styles.sidebarFooter}>
-        <div style={styles.footerPill}>● LIVE</div>
-        <div style={styles.footerText}>GL Master</div>
-      </div>
-
       <style>{"@keyframes spin { to { transform: rotate(360deg); } }"}</style>
     </aside>
   );

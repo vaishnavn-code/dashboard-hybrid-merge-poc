@@ -4,6 +4,7 @@ import { mapCustomerMasterOverview } from "../mappers/customerMasterMapper";
 import KpiCard from "../components/ui/KpiCard";
 import DashboardChartRenderer from "../components/dashboard/DashboardChartRenderer";
 import { getByPath } from "../utils/getByPath";
+import { useInsights } from "../hooks/useDashboardData";
 
 function toNumber(value) {
   const cleaned = String(value ?? "")
@@ -55,159 +56,22 @@ function buildOverviewInsights(mappedData) {
     : "0.0";
 
   const insights = [];
-
-  if (topRegion) {
-    insights.push({
-      category: "Geographic Concentration",
-      severity: toNumber(topRegion.eir) >= 40 ? "High" : "Medium",
-      insight: `${topRegion.name} has the highest customer concentration with ${toNumber(
-        topRegion.opening,
-      ).toLocaleString("en-IN")} customers, contributing ${toNumber(
-        topRegion.eir,
-      ).toFixed(1)}% of the visible customer base.`,
-      reasoning: [
-        "The region-level distribution shows a clear concentration pattern.",
-        "High regional concentration can indicate dependency on one geography.",
-      ],
-      evidence: [
-        `${topRegion.name}: ${toNumber(topRegion.opening).toLocaleString(
-          "en-IN",
-        )} customers`,
-        `Share: ${toNumber(topRegion.eir).toFixed(1)}%`,
-      ],
-      recommended_action:
-        "Review region-wise customer concentration and validate whether this aligns with business coverage expectations.",
-    });
-  }
-
-  insights.push({
-    category: "Banking Coverage",
-    severity: toNumber(bankCoveragePct) < 80 ? "Medium" : "Info",
-    insight: `${bankCoveragePct}% of customers have bank account details available based on the current bank coverage split.`,
-    reasoning: [
-      "Bank coverage is important for downstream payment, reconciliation, and onboarding workflows.",
-      "Customers without bank details may need remediation before operational processing.",
-    ],
-    evidence: [
-      `With bank account: ${toNumber(withBank).toLocaleString("en-IN")}`,
-      `Without bank account: ${toNumber(noBank).toLocaleString("en-IN")}`,
-    ],
-    recommended_action:
-      "Prioritize missing bank detail remediation for customers without registered bank accounts.",
-  });
-
-  if (topTds) {
-    insights.push({
-      category: "Tax Classification",
-      severity: String(topTds.name).toLowerCase().includes("not assigned")
-        ? "High"
-        : "Medium",
-      insight: `${topTds.name} is the largest WHT / TDS category with ${toNumber(
-        topTds.value,
-      ).toLocaleString("en-IN")} customers.`,
-      reasoning: [
-        "The WHT / TDS category distribution indicates how tax classification is assigned across the customer base.",
-        "A large unassigned category can indicate master data incompleteness.",
-      ],
-      evidence: [
-        `${topTds.name}: ${toNumber(topTds.value).toLocaleString(
-          "en-IN",
-        )} customers`,
-      ],
-      recommended_action:
-        "Review customers in the dominant WHT / TDS category and validate whether tax assignments are complete.",
-    });
-  }
-
-  if (topCity) {
-    insights.push({
-      category: "City Concentration",
-      severity: "Medium",
-      insight: `${topCity.name} is the leading city with ${toNumber(
-        topCity.value,
-      ).toLocaleString("en-IN")} customers.`,
-      reasoning: [
-        "City-level distribution helps identify local concentration and duplicate naming patterns.",
-        "High city concentration should be validated against expected customer footprint.",
-      ],
-      evidence: [
-        `${topCity.name}: ${toNumber(topCity.value).toLocaleString(
-          "en-IN",
-        )} customers`,
-      ],
-      recommended_action:
-        "Validate city-level standardization, especially where casing or spelling variations may exist.",
-    });
-  }
-
-  if (topBankState || topRecon) {
-    insights.push({
-      category: "Master Data Quality",
-      severity: "Info",
-      insight: `Bank coverage and reconciliation account split show useful indicators for customer master completeness and finance classification.`,
-      reasoning: [
-        topBankState
-          ? `${topBankState.name} has the highest bank coverage count among states.`
-          : "Bank coverage by state is available for review.",
-        topRecon
-          ? `${topRecon.name} is the largest reconciliation account bucket.`
-          : "Reconciliation split is available for classification review.",
-      ],
-      evidence: [
-        topBankState
-          ? `${topBankState.name}: ${toNumber(
-              topBankState.value,
-            ).toLocaleString("en-IN")} with bank`
-          : "Bank coverage by state available",
-        topRecon
-          ? `${topRecon.name}: ${toNumber(topRecon.value).toLocaleString(
-              "en-IN",
-            )}`
-          : "Reconciliation split available",
-      ],
-      recommended_action:
-        "Use bank coverage and reconciliation account split together to identify incomplete or incorrectly classified customer records.",
-    });
-  }
-
-  return {
-    summary:
-      insights[0]?.insight ||
-      "Customer master overview insights are available for review.",
-    insights,
-    count: insights.length,
-    model: "Customer Analytics Rules Engine",
-    ragEnabled: false,
-  };
 }
 
-function GenAiInsightsPanel({ mappedData }) {
-  const [insights, setInsights] = useState(null);
-  const [aiLoading, setAiLoading] = useState(false);
-  const [aiError, setAiError] = useState("");
+function GenAiInsightsPanel() {
+  const {
+    insights,
+    loading: insightsLoading,
+    error: insightsError,
+    generate,
+    hasGenerated,
+  } = useInsights();
 
-  const hasGenerated = Boolean(insights);
   const insightItems = insights?.insights || [];
   const insightSummary = insights?.summary || "";
   const insightCount = insights?.count || insightItems.length || 0;
   const insightModel = insights?.model || "Customer Analytics";
   const ragEnabled = Boolean(insights?.ragEnabled);
-
-  const generate = () => {
-    try {
-      setAiLoading(true);
-      setAiError("");
-
-      setTimeout(() => {
-        const result = buildOverviewInsights(mappedData);
-        setInsights(result);
-        setAiLoading(false);
-      }, 500);
-    } catch (error) {
-      setAiError(error.message || "Failed to generate insights.");
-      setAiLoading(false);
-    }
-  };
 
   return (
     <>
@@ -230,9 +94,9 @@ function GenAiInsightsPanel({ mappedData }) {
           <button
             className="insights-btn"
             onClick={generate}
-            disabled={aiLoading}
+            disabled={insightsLoading}
           >
-            {aiLoading
+            {insightsLoading
               ? "Analysing..."
               : hasGenerated
                 ? "✦ Regenerate Insights"
@@ -241,24 +105,25 @@ function GenAiInsightsPanel({ mappedData }) {
         </div>
 
         <div className="ai-panel-body">
-          {aiLoading && (
-            <div className="ai-loading show">
-              <div className="ai-loading-dots">
-                <span className="ai-loading-dot"></span>
-                <span className="ai-loading-dot"></span>
-                <span className="ai-loading-dot"></span>
-              </div>
-              <div className="ai-loading-text">
-                Generating customer master insights...
-              </div>
-            </div>
+          {insightsLoading && (
+  <div className="ai-loading show">
+    <div className="ai-loading-dots">
+      <span className="ai-loading-dot"></span>
+      <span className="ai-loading-dot"></span>
+      <span className="ai-loading-dot"></span>
+    </div>
+
+    <div className="ai-loading-text">
+      Generating customer master insights...
+    </div>
+  </div>
+)}
+
+          {!insightsLoading && insightsError && (
+            <div className="ai-error show">{insightsError}</div>
           )}
 
-          {!aiLoading && aiError && (
-            <div className="ai-error show">{aiError}</div>
-          )}
-
-          {!aiLoading && !aiError && insightItems.length > 0 && (
+          {!insightsLoading && !insightsError && insightItems.length > 0 && (
             <div className="ai-result show">
               <div className="ai-summary-hero">
                 <div className="ai-summary-label">Executive Summary</div>
@@ -349,7 +214,7 @@ function GenAiInsightsPanel({ mappedData }) {
             </div>
           )}
 
-          {!insights && !aiLoading && !aiError && (
+          {!insights && !insightsLoading && !insightsError && (
             <div className="ai-empty-state">
               Click the button above to generate AI-powered customer master
               insights.
@@ -388,7 +253,7 @@ export default function Overview({ data }) {
         ))}
       </div>
 
-      <GenAiInsightsPanel mappedData={mappedData} />
+      <GenAiInsightsPanel />
 
       <div className="two-col" style={{ marginTop: "20px" }}>
         {chartRow1.map((chart) => (
