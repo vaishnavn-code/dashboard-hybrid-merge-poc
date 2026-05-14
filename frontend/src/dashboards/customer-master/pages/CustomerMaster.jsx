@@ -67,6 +67,40 @@ function DuplicateGroupCard({ section, groups }) {
     </div>
   );
 }
+const valueBadgeColors = [
+  "cm-badge-blue",
+  "cm-badge-green",
+  "cm-badge-purple",
+  "cm-badge-orange",
+  "cm-badge-teal",
+  "cm-badge-pink",
+  "cm-badge-indigo",
+];
+
+function buildValueColorMap(rows, keys) {
+  const colorMap = {};
+  let colorIndex = 0;
+
+  keys.forEach((key) => {
+    const uniqueValues = Array.from(
+      new Set(
+        rows.map((row) => row[key]).filter((value) => value && value !== "--"),
+      ),
+    );
+
+    uniqueValues.forEach((value) => {
+      const mapKey = `${key}:${value}`;
+
+      if (!colorMap[mapKey]) {
+        colorMap[mapKey] =
+          valueBadgeColors[colorIndex % valueBadgeColors.length];
+        colorIndex += 1;
+      }
+    });
+  });
+
+  return colorMap;
+}
 
 export default function CustomerMaster({ data }) {
   const [searchText, setSearchText] = useState("");
@@ -130,6 +164,14 @@ export default function CustomerMaster({ data }) {
       return matchesSearch && matchesRegion && matchesWht;
     });
   }, [tableRows, searchText, selectedRegion, selectedWht]);
+
+  const valueColorMap = useMemo(() => {
+    return buildValueColorMap(filteredRows, [
+      "wht_category",
+      "gstin",
+      "recon_acct",
+    ]);
+  }, [filteredRows]);
 
   const totalPages = Math.max(1, Math.ceil(filteredRows.length / PAGE_SIZE));
 
@@ -324,9 +366,17 @@ export default function CustomerMaster({ data }) {
                     }
 
                     if (column.key === "wht_category") {
+                      const badgeClass =
+                        cellValue === "--"
+                          ? "cm-badge-grey"
+                          : valueColorMap[`wht_category:${cellValue}`] ||
+                            "cm-badge-grey";
+
                       return (
                         <td key={column.key}>
-                          <span className="cm-table-badge cm-badge-blue">
+                          <span
+                            className={`cm-table-badge cm-value-badge ${badgeClass}`}
+                          >
                             {cellValue}
                           </span>
                         </td>
@@ -344,9 +394,17 @@ export default function CustomerMaster({ data }) {
                     }
 
                     if (column.key === "gstin") {
+                      const badgeClass =
+                        cellValue === "--"
+                          ? "cm-badge-grey"
+                          : valueColorMap[`gstin:${cellValue}`] ||
+                            "cm-badge-grey";
+
                       return (
                         <td key={column.key}>
-                          <span className="cm-table-badge cm-badge-red">
+                          <span
+                            className={`cm-table-badge cm-value-badge ${badgeClass}`}
+                          >
                             {cellValue}
                           </span>
                         </td>
@@ -369,7 +427,25 @@ export default function CustomerMaster({ data }) {
                       );
                     }
 
-                    if (column.key === "recon_acct" || column.key === "name") {
+                    if (column.key === "recon_acct") {
+                      const badgeClass =
+                        cellValue === "--"
+                          ? "cm-badge-grey"
+                          : valueColorMap[`recon_acct:${cellValue}`] ||
+                            "cm-badge-grey";
+
+                      return (
+                        <td key={column.key}>
+                          <span
+                            className={`cm-table-badge cm-value-badge ${badgeClass}`}
+                          >
+                            {cellValue}
+                          </span>
+                        </td>
+                      );
+                    }
+
+                    if (column.key === "name") {
                       return (
                         <td key={column.key}>
                           <span className="cm-table-badge cm-badge-grey">
@@ -415,9 +491,7 @@ export default function CustomerMaster({ data }) {
                 type="button"
                 className="table-pagination-btn"
                 disabled={currentPage === 1}
-                onClick={() =>
-                  setCurrentPage((page) => Math.max(1, page - 1))
-                }
+                onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
               >
                 Prev
               </button>

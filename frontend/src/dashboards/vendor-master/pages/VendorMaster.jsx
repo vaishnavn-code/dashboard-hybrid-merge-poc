@@ -66,6 +66,41 @@ function DuplicateGroupCard({ section, groups }) {
   );
 }
 
+const valueBadgeColors = [
+  "cm-badge-blue",
+  "cm-badge-green",
+  "cm-badge-purple",
+  "cm-badge-orange",
+  "cm-badge-teal",
+  "cm-badge-pink",
+  "cm-badge-indigo",
+];
+
+function buildValueColorMap(rows, keys) {
+  const colorMap = {};
+  let colorIndex = 0;
+
+  keys.forEach((key) => {
+    const uniqueValues = Array.from(
+      new Set(
+        rows.map((row) => row[key]).filter((value) => value && value !== "--"),
+      ),
+    );
+
+    uniqueValues.forEach((value) => {
+      const mapKey = `${key}:${value}`;
+
+      if (!colorMap[mapKey]) {
+        colorMap[mapKey] =
+          valueBadgeColors[colorIndex % valueBadgeColors.length];
+        colorIndex += 1;
+      }
+    });
+  });
+
+  return colorMap;
+}
+
 export default function VendorMaster({ data }) {
   const [searchText, setSearchText] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("ALL");
@@ -129,6 +164,15 @@ export default function VendorMaster({ data }) {
       return matchesSearch && matchesRegion && matchesTds;
     });
   }, [tableRows, searchText, selectedRegion, selectedTds]);
+
+  const valueColorMap = useMemo(() => {
+    return buildValueColorMap(filteredRows, [
+      "tds_desc",
+      "tds_code",
+      "gstin",
+      "recon_acct",
+    ]);
+  }, [filteredRows]);
 
   const totalPages = Math.max(1, Math.ceil(filteredRows.length / pageSize));
 
@@ -313,9 +357,17 @@ export default function VendorMaster({ data }) {
                       column.key === "tds_desc" ||
                       column.key === "tds_code"
                     ) {
+                      const badgeClass =
+                        cellValue === "--"
+                          ? "cm-badge-grey"
+                          : valueColorMap[`${column.key}:${cellValue}`] ||
+                            "cm-badge-grey";
+
                       return (
                         <td key={column.key}>
-                          <span className="cm-table-badge cm-badge-blue">
+                          <span
+                            className={`cm-table-badge cm-value-badge ${badgeClass}`}
+                          >
                             {cellValue}
                           </span>
                         </td>
@@ -333,9 +385,17 @@ export default function VendorMaster({ data }) {
                     }
 
                     if (column.key === "gstin") {
+                      const badgeClass =
+                        cellValue === "--"
+                          ? "cm-badge-grey"
+                          : valueColorMap[`gstin:${cellValue}`] ||
+                            "cm-badge-grey";
+
                       return (
                         <td key={column.key}>
-                          <span className="cm-table-badge cm-badge-red">
+                          <span
+                            className={`cm-table-badge cm-value-badge ${badgeClass}`}
+                          >
                             {cellValue}
                           </span>
                         </td>
@@ -358,7 +418,25 @@ export default function VendorMaster({ data }) {
                       );
                     }
 
-                    if (column.key === "recon_acct" || column.key === "name") {
+                    if (column.key === "recon_acct") {
+                      const badgeClass =
+                        cellValue === "--"
+                          ? "cm-badge-grey"
+                          : valueColorMap[`recon_acct:${cellValue}`] ||
+                            "cm-badge-grey";
+
+                      return (
+                        <td key={column.key}>
+                          <span
+                            className={`cm-table-badge cm-value-badge ${badgeClass}`}
+                          >
+                            {cellValue}
+                          </span>
+                        </td>
+                      );
+                    }
+
+                    if (column.key === "name") {
                       return (
                         <td key={column.key}>
                           <span className="cm-table-badge cm-badge-grey">

@@ -1026,6 +1026,7 @@ export function StackedBarOnly({
   xKey = "name",
   series = [],
   barSize = 34,
+  slantLabels = false,
 }) {
   return (
     <ResponsiveContainer width="100%" height={height}>
@@ -1037,10 +1038,16 @@ export function StackedBarOnly({
 
         <XAxis
           dataKey={xKey}
-          tick={{ fontSize: 11, fill: "#5E93C5" }}
+          tick={{
+            fontSize: 11,
+            fill: "#5E93C5",
+          }}
+          angle={slantLabels ? -35 : 0}
+          textAnchor={slantLabels ? "end" : "middle"}
+          height={slantLabels ? 70 : 30}
+          interval={0}
           axisLine={false}
           tickLine={false}
-          interval={0}
         />
 
         <YAxis
@@ -1050,11 +1057,15 @@ export function StackedBarOnly({
         />
 
         <Tooltip
-          cursor={{ fill: "rgba(21, 101, 192, 0.06)" }}
-          formatter={(value, name) => [
-            Number(value || 0).toLocaleString("en-IN"),
-            name,
-          ]}
+          cursor={{ fill: "transparent" }}
+          content={buildUnifiedTooltip({
+            valueFormatter: (value, name) => {
+              if (name === "Avg EIR %") {
+                return `${Number(value).toFixed(2)}%`;
+              }
+              return fmt.cr(value);
+            },
+          })}
         />
 
         <Legend

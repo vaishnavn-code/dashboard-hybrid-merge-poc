@@ -102,6 +102,7 @@ export default function DashboardChartRenderer({ chart, data }) {
           xKey={chart.xKey || "name"}
           series={chart.series}
           barSize={chart.barSize || 34}
+          slantLabels={chart.slantLabels}
         />
       )}
 
